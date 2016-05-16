@@ -64,6 +64,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-AngularJS學習筆記" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/16/AngularJS學習筆記/" class="article-date">
+  <time datetime="2016-05-16T09:49:33.000Z" itemprop="datePublished">2016-05-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/16/AngularJS學習筆記/">AngularJS學習筆記</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="取得其他controller的scope"><a href="#取得其他controller的scope" class="headerlink" title="取得其他controller的scope"></a>取得其他controller的scope</h3><p>每個controller都有自己的$scope，如何取得其他ctrl的$scope呢？<br>可以透過angular.element(“jquery-selector”).scope();取得<br>其中jqeuryselector就是我們常用的jquery語法<br>這邊當然是要以尋找該對應ng-controller的tag為主<br>找到後，就可以直接使用</p>
+<h3 id="手動更新特定-scope的畫面"><a href="#手動更新特定-scope的畫面" class="headerlink" title="手動更新特定$scope的畫面"></a>手動更新特定$scope的畫面</h3><p>常用於非同步的callback, 無法自動觸發angular apply</p>
+<p>方法一：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$scope.value = <span class="string">'newValue'</span>;</span><br><span class="line">$scope.$apply();</span><br></pre></td></tr></table></figure></p>
+<p>方法二：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$scope.$apply(<span class="function"><span class="keyword">function</span>(<span class="params">$_scope</span>)</span>&#123;</span><br><span class="line">  $_scope.value = <span class="string">'newValue'</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/16/AngularJS學習筆記/" data-id="cio9u08j40000iub4ojbwwz48" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/16/hello-world/" class="article-date">
@@ -97,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/hello-world/" data-id="cio9dup1u0000y8b4vy8odwxx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/16/hello-world/" data-id="cio9u08jc0002iub40k07evb0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -141,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/13/常用bash指令/" data-id="cio9dup200001y8b47fxodl78" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/13/常用bash指令/" data-id="cio9u08je0003iub449dwwvcc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/12/Hexo使用筆記/" data-id="cio9dup2p0002y8b4lmbgucgs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/12/Hexo使用筆記/" data-id="cio9u08j90001iub4ed3uzfno" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,6 +255,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/16/AngularJS學習筆記/">AngularJS學習筆記</a>
+          </li>
         
           <li>
             <a href="/2016/05/16/hello-world/">Hello World</a>
