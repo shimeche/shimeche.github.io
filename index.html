@@ -105,7 +105,7 @@
     motion: true,
     duoshuo: {
       userId: 0,
-      author: 'Author'
+      author: '博主'
     }
   };
 </script>
@@ -211,6 +211,128 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/26/Mongodb啟用問題/" itemprop="url">
+                  Mongodb啟用問題
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-05-26T11:27:24+08:00" content="2016-05-26">
+              2016-05-26
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有時候不正常關機或不明原因導致mongoDB停止<br>接著重新啟用mongoDB時，就叫不醒了<br>但執行啟用mongoDB指令時，也沒有出現特別的錯誤，還跟你說啟用了!!?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo start mongod</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>mongod start/running, process 1660<br>看起來是啟用了阿~~~</p>
+</blockquote>
+<p>但察看網路服務狀況，仍然沒有出現mongoDB開啟的port<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -tpnl</span><br><span class="line">預設應該要有27017的port</span><br></pre></td></tr></table></figure></p>
+<p>這時查看mongoDB的log就能清楚為什麼了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ more /var/<span class="built_in">log</span>/mongodb/mongod.log</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>I CONTROL  <strong>*</strong> SERVER RESTARTED <strong>*</strong><br>W -        [initandlisten] Detected unclean shutdown - <font color="red">/var/lib/mongodb/mongod.lock is not empty.</font><br>I STORAGE  [initandlisten] exception in initAndListen: 98 Unable to create/open lock file: /var/lib/mongodb/mongod.lock errno:13 Permission denied Is a mongod instance already running?, terminating<br>I CONTROL  [initandlisten] dbexit:  rc: 100</p>
+</blockquote>
+<p>可以看到<code>/var/lib/mongodb/mongod.lock</code>並沒有被清除，有可能是不正常停用的關係<br>先把他清除試試看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rm /var/lib/mongodb/mongod.lock</span><br></pre></td></tr></table></figure></p>
+<p>在重跑一次啟用指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo start mongod</span><br></pre></td></tr></table></figure></p>
+<p>察看網路服務狀況<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -tpnl</span><br><span class="line">預設應該要有27017的port</span><br></pre></td></tr></table></figure></p>
+<p>如果仍然沒有，就在看一次mongoDB log<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ more /var/log/mongodb/mongod.log</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>I CONTROL  <strong>*</strong> SERVER RESTARTED <strong>*</strong><br>E NETWORK  [initandlisten] <font color="red">Failed to unlink socket file /tmp/mongodb-27017.sock</font> errno:1 Operation not permitted<br>I -        [initandlisten] Fatal Assertion 28578<br>I -        [initandlisten] </p>
+</blockquote>
+<p>這時候又有新的錯誤訊息，沒有權限去刪除<code>/tmp/mongodb-27017.sock</code><br>那一樣把他刪掉吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rm /tmp/mongodb-27017.sock</span><br></pre></td></tr></table></figure></p>
+<p>再試一次!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo start mongod</span><br></pre></td></tr></table></figure></p>
+<p>查看網路服務狀況<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -tpnl</span><br></pre></td></tr></table></figure></p>
+<p>預設應該要有27017的port, 應該就會有了!</p>
+<blockquote>
+<p>(Not all processes could be identified, non-owned process info will not be shown, you would have to be root to see it all.)<br>Active Internet connections (only servers)<br>Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name<br>tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      -<br>tcp        0      0 <font color="red">127.0.0.1:27017</font>         0.0.0.0:*               LISTEN      -<br>tcp        0      0 0.0.0.0:389             0.0.0.0:*               LISTEN      -</p>
+</blockquote>
+<p>查看log<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ more /var/log/mongodb/mongod.log</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>I CONTROL  <strong>*</strong> SERVER RESTARTED <strong>*</strong><br>I STORAGE  [initandlisten] wiredtiger_open config: …<br>I CONTROL  [initandlisten] MongoDB starting : pid=1533 port=27017 dbpath=/var/lib/mongodb 64-bit host=ubuntu-mongodb<br>I CONTROL  [initandlisten] db version v3.0.2<br>I CONTROL  [initandlisten] git version: xx<br>I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014<br>I CONTROL  [initandlisten] build info: Linux<br>I CONTROL  [initandlisten] allocator: tcmalloc<br>I CONTROL  [initandlisten] options: { config: “/etc/mongod.conf”, net: { bindIp: “0.0.0.0”, port: 27017 }, processManagement: { fork: true }, storage: { dbPath: “/var/lib/mongodb”, engine: “wiredTiger”, journal: { enabled: true }, wiredTiger: { collectionConfig: { blockCompressor: “snappy” } } }, systemLog: { destination: “file”, logAppend: true, path: “/var/log/mongodb/mongod.log” } }<br>I NETWORK  [initandlisten] <font color="red">waiting for connections on port 27017</font></p>
+</blockquote>
+<p>最後一行，在等待連線了，看來沒問題了！</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -594,7 +716,7 @@
 <p>只顯示match的部份</p>
 <h3 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cut <span class="_">-d</span> \<span class="string">" -f 9</span></span><br></pre></td></tr></table></figure>
 <p>-d 利用”符號分割字串為陣列，其中\是跳脫字元<br>-f 取得第九個元素，元素起始值為1</p>
-<h3 id="發表文章"><a href="#發表文章" class="headerlink" title="發表文章"></a>發表文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n [<span class="built_in">type</span>] [title]</span><br></pre></td></tr></table></figure>
+<h3 id="檢查-IP-與主機名稱對應"><a href="#檢查-IP-與主機名稱對應" class="headerlink" title="檢查 IP 與主機名稱對應"></a>檢查 IP 與主機名稱對應</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nslookup</span><br></pre></td></tr></table></figure>
           
         
       
@@ -756,7 +878,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -804,7 +926,7 @@
 </div>
 
 <div class="powered-by">
-  Power By <a class="theme-link" href="http://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
 </div>
 
 <div class="theme-info">

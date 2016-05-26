@@ -84,19 +84,28 @@
 
 
 
-<meta name="description" content="取得其他controller的scope每個controller都有自己的$scope，如何取得其他ctrl的$scope呢？可以透過angular.element(“jquery-selector”).scope();取得其中jqeuryselector就是我們常用的jquery語法這邊當然是要以尋找該對應ng-controller的tag為主找到後，就可以直接使用
-手動更新特定$scope的畫">
+<meta name="description" content="有時候不正常關機或不明原因導致mongoDB停止接著重新啟用mongoDB時，就叫不醒了但執行啟用mongoDB指令時，也沒有出現特別的錯誤，還跟你說啟用了!!?1$ sudo start mongod
+
+mongod start/running, process 1660看起來是啟用了阿~~~
+
+但察看網路服務狀況，仍然沒有出現mongoDB開啟的port12$ netstat -tpnl預設應">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AngularJS學習筆記">
-<meta property="og:url" content="http://shimeche.github.io/2016/05/16/AngularJS學習筆記/index.html">
+<meta property="og:title" content="Mongodb啟用問題">
+<meta property="og:url" content="http://shimeche.github.io/2016/05/26/Mongodb啟用問題/index.html">
 <meta property="og:site_name" content="阿轉的blog">
-<meta property="og:description" content="取得其他controller的scope每個controller都有自己的$scope，如何取得其他ctrl的$scope呢？可以透過angular.element(“jquery-selector”).scope();取得其中jqeuryselector就是我們常用的jquery語法這邊當然是要以尋找該對應ng-controller的tag為主找到後，就可以直接使用
-手動更新特定$scope的畫">
-<meta property="og:updated_time" content="2016-05-26T03:56:44.506Z">
+<meta property="og:description" content="有時候不正常關機或不明原因導致mongoDB停止接著重新啟用mongoDB時，就叫不醒了但執行啟用mongoDB指令時，也沒有出現特別的錯誤，還跟你說啟用了!!?1$ sudo start mongod
+
+mongod start/running, process 1660看起來是啟用了阿~~~
+
+但察看網路服務狀況，仍然沒有出現mongoDB開啟的port12$ netstat -tpnl預設應">
+<meta property="og:updated_time" content="2016-05-26T06:23:49.026Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AngularJS學習筆記">
-<meta name="twitter:description" content="取得其他controller的scope每個controller都有自己的$scope，如何取得其他ctrl的$scope呢？可以透過angular.element(“jquery-selector”).scope();取得其中jqeuryselector就是我們常用的jquery語法這邊當然是要以尋找該對應ng-controller的tag為主找到後，就可以直接使用
-手動更新特定$scope的畫">
+<meta name="twitter:title" content="Mongodb啟用問題">
+<meta name="twitter:description" content="有時候不正常關機或不明原因導致mongoDB停止接著重新啟用mongoDB時，就叫不醒了但執行啟用mongoDB指令時，也沒有出現特別的錯誤，還跟你說啟用了!!?1$ sudo start mongod
+
+mongod start/running, process 1660看起來是啟用了阿~~~
+
+但察看網路服務狀況，仍然沒有出現mongoDB開啟的port12$ netstat -tpnl預設應">
 
 
 
@@ -114,7 +123,7 @@
   };
 </script>
 
-  <title> AngularJS學習筆記 | 阿轉的blog </title>
+  <title> Mongodb啟用問題 | 阿轉的blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -234,7 +243,7 @@
             
             
               
-                AngularJS學習筆記
+                Mongodb啟用問題
               
             
           </h1>
@@ -246,8 +255,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-16T17:49:33+08:00" content="2016-05-16">
-              2016-05-16
+            <time itemprop="dateCreated" datetime="2016-05-26T11:27:24+08:00" content="2016-05-26">
+              2016-05-26
             </time>
           </span>
 
@@ -274,10 +283,35 @@
       
 
       
-        <h3 id="取得其他controller的scope"><a href="#取得其他controller的scope" class="headerlink" title="取得其他controller的scope"></a>取得其他controller的scope</h3><p>每個controller都有自己的$scope，如何取得其他ctrl的$scope呢？<br>可以透過angular.element(“jquery-selector”).scope();取得<br>其中jqeuryselector就是我們常用的jquery語法<br>這邊當然是要以尋找該對應ng-controller的tag為主<br>找到後，就可以直接使用</p>
-<h3 id="手動更新特定-scope的畫面"><a href="#手動更新特定-scope的畫面" class="headerlink" title="手動更新特定$scope的畫面"></a>手動更新特定$scope的畫面</h3><p>常用於非同步的callback, 無法自動觸發angular apply</p>
-<p>方法一：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$scope.value = <span class="string">'newValue'</span>;</span><br><span class="line">$scope.$apply();</span><br></pre></td></tr></table></figure></p>
-<p>方法二：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$scope.$apply(<span class="function"><span class="keyword">function</span>(<span class="params">$_scope</span>)</span>&#123;</span><br><span class="line">  $_scope.value = <span class="string">'newValue'</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+        <p>有時候不正常關機或不明原因導致mongoDB停止<br>接著重新啟用mongoDB時，就叫不醒了<br>但執行啟用mongoDB指令時，也沒有出現特別的錯誤，還跟你說啟用了!!?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo start mongod</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>mongod start/running, process 1660<br>看起來是啟用了阿~~~</p>
+</blockquote>
+<p>但察看網路服務狀況，仍然沒有出現mongoDB開啟的port<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -tpnl</span><br><span class="line">預設應該要有27017的port</span><br></pre></td></tr></table></figure></p>
+<p>這時查看mongoDB的log就能清楚為什麼了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ more /var/<span class="built_in">log</span>/mongodb/mongod.log</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>I CONTROL  <strong>*</strong> SERVER RESTARTED <strong>*</strong><br>W -        [initandlisten] Detected unclean shutdown - <font color="red">/var/lib/mongodb/mongod.lock is not empty.</font><br>I STORAGE  [initandlisten] exception in initAndListen: 98 Unable to create/open lock file: /var/lib/mongodb/mongod.lock errno:13 Permission denied Is a mongod instance already running?, terminating<br>I CONTROL  [initandlisten] dbexit:  rc: 100</p>
+</blockquote>
+<p>可以看到<code>/var/lib/mongodb/mongod.lock</code>並沒有被清除，有可能是不正常停用的關係<br>先把他清除試試看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rm /var/lib/mongodb/mongod.lock</span><br></pre></td></tr></table></figure></p>
+<p>在重跑一次啟用指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo start mongod</span><br></pre></td></tr></table></figure></p>
+<p>察看網路服務狀況<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -tpnl</span><br><span class="line">預設應該要有27017的port</span><br></pre></td></tr></table></figure></p>
+<p>如果仍然沒有，就在看一次mongoDB log<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ more /var/log/mongodb/mongod.log</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>I CONTROL  <strong>*</strong> SERVER RESTARTED <strong>*</strong><br>E NETWORK  [initandlisten] <font color="red">Failed to unlink socket file /tmp/mongodb-27017.sock</font> errno:1 Operation not permitted<br>I -        [initandlisten] Fatal Assertion 28578<br>I -        [initandlisten] </p>
+</blockquote>
+<p>這時候又有新的錯誤訊息，沒有權限去刪除<code>/tmp/mongodb-27017.sock</code><br>那一樣把他刪掉吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rm /tmp/mongodb-27017.sock</span><br></pre></td></tr></table></figure></p>
+<p>再試一次!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo start mongod</span><br></pre></td></tr></table></figure></p>
+<p>查看網路服務狀況<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -tpnl</span><br></pre></td></tr></table></figure></p>
+<p>預設應該要有27017的port, 應該就會有了!</p>
+<blockquote>
+<p>(Not all processes could be identified, non-owned process info will not be shown, you would have to be root to see it all.)<br>Active Internet connections (only servers)<br>Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name<br>tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      -<br>tcp        0      0 <font color="red">127.0.0.1:27017</font>         0.0.0.0:*               LISTEN      -<br>tcp        0      0 0.0.0.0:389             0.0.0.0:*               LISTEN      -</p>
+</blockquote>
+<p>查看log<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ more /var/log/mongodb/mongod.log</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>I CONTROL  <strong>*</strong> SERVER RESTARTED <strong>*</strong><br>I STORAGE  [initandlisten] wiredtiger_open config: …<br>I CONTROL  [initandlisten] MongoDB starting : pid=1533 port=27017 dbpath=/var/lib/mongodb 64-bit host=ubuntu-mongodb<br>I CONTROL  [initandlisten] db version v3.0.2<br>I CONTROL  [initandlisten] git version: xx<br>I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014<br>I CONTROL  [initandlisten] build info: Linux<br>I CONTROL  [initandlisten] allocator: tcmalloc<br>I CONTROL  [initandlisten] options: { config: “/etc/mongod.conf”, net: { bindIp: “0.0.0.0”, port: 27017 }, processManagement: { fork: true }, storage: { dbPath: “/var/lib/mongodb”, engine: “wiredTiger”, journal: { enabled: true }, wiredTiger: { collectionConfig: { blockCompressor: “snappy” } } }, systemLog: { destination: “file”, logAppend: true, path: “/var/log/mongodb/mongod.log” } }<br>I NETWORK  [initandlisten] <font color="red">waiting for connections on port 27017</font></p>
+</blockquote>
+<p>最後一行，在等待連線了，看來沒問題了！</p>
 
       
     </div>
@@ -302,17 +336,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/13/常用bash指令/" rel="next" title="常用bash指令">
-                <i class="fa fa-chevron-left"></i> 常用bash指令
+              <a href="/2016/05/18/查詢google-AccessToken狀態/" rel="next" title="查詢google AccessToken狀態">
+                <i class="fa fa-chevron-left"></i> 查詢google AccessToken狀態
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/17/超商咖啡價格分析/" rel="prev" title="超商咖啡價格分析">
-                超商咖啡價格分析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -412,7 +442,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#取得其他controller的scope"><span class="nav-number">1.</span> <span class="nav-text">取得其他controller的scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手動更新特定-scope的畫面"><span class="nav-number">2.</span> <span class="nav-text">手動更新特定$scope的畫面</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
         </section>
