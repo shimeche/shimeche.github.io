@@ -84,34 +84,40 @@
 
 
 
-<meta name="description" content="取得無期限token方法https://developers.facebook.com/tools/explorer
+<meta name="description" content="取得無期限token方法
+https://developers.facebook.com/tools/explorer
+
 選擇想要授權的應用程式
 選擇Get User Access Token
 至少勾選pages_show_list權限，其他在視需求勾選，Ex: email…
 授權畫面確定後，存取權仗就會出現新的access token
 但此時該token的期限只有一小時左右
-接著透過瀏覽器或curl">
+接著透過瀏覽器或cu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Facebook Graph API操作">
 <meta property="og:url" content="http://shimeche.github.io/2016/06/23/Facebook-Graph-API操作/index.html">
 <meta property="og:site_name" content="阿轉的blog">
-<meta property="og:description" content="取得無期限token方法https://developers.facebook.com/tools/explorer
+<meta property="og:description" content="取得無期限token方法
+https://developers.facebook.com/tools/explorer
+
 選擇想要授權的應用程式
 選擇Get User Access Token
 至少勾選pages_show_list權限，其他在視需求勾選，Ex: email…
 授權畫面確定後，存取權仗就會出現新的access token
 但此時該token的期限只有一小時左右
-接著透過瀏覽器或curl">
-<meta property="og:updated_time" content="2016-06-23T02:58:57.754Z">
+接著透過瀏覽器或cu">
+<meta property="og:updated_time" content="2016-06-23T07:46:48.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Facebook Graph API操作">
-<meta name="twitter:description" content="取得無期限token方法https://developers.facebook.com/tools/explorer
+<meta name="twitter:description" content="取得無期限token方法
+https://developers.facebook.com/tools/explorer
+
 選擇想要授權的應用程式
 選擇Get User Access Token
 至少勾選pages_show_list權限，其他在視需求勾選，Ex: email…
 授權畫面確定後，存取權仗就會出現新的access token
 但此時該token的期限只有一小時左右
-接著透過瀏覽器或curl">
+接著透過瀏覽器或cu">
 
 
 
@@ -289,16 +295,27 @@
       
 
       
-        <h3 id="取得無期限token方法"><a href="#取得無期限token方法" class="headerlink" title="取得無期限token方法"></a>取得無期限token方法</h3><p><a href="https://developers.facebook.com/tools/explorer" target="_blank" rel="external">https://developers.facebook.com/tools/explorer</a></p>
+        <h3 id="取得無期限token方法"><a href="#取得無期限token方法" class="headerlink" title="取得無期限token方法"></a>取得無期限token方法</h3><blockquote>
+<p><a href="https://developers.facebook.com/tools/explorer" target="_blank" rel="external">https://developers.facebook.com/tools/explorer</a></p>
+</blockquote>
 <p>選擇想要授權的應用程式</p>
 <p>選擇Get User Access Token</p>
 <p>至少勾選pages_show_list權限，其他在視需求勾選，Ex: email…</p>
 <p>授權畫面確定後，存取權仗就會出現新的access token</p>
 <p>但此時該token的期限只有一小時左右</p>
 <p>接著透過瀏覽器或curl要求下面網址</p>
-<p>Request:<br><a href="https://graph.facebook.com/oauth/access_token?client_id=[預授權的應用程式client_id]&amp;client_secret=[預授權的應用程式client_secret]&amp;grant_type=fb_exchange_token&amp;fb_exchange_token=[剛剛獲得的短效accessToken" target="_blank" rel="external">https://graph.facebook.com/oauth/access_token?client_id=[預授權的應用程式client_id]&amp;client_secret=[預授權的應用程式client_secret]&amp;grant_type=fb_exchange_token&amp;fb_exchange_token=[剛剛獲得的短效accessToken</a>]<br>Response:<br>access_token=EAAHFVJ2x6mwBAHwjsxWvhPghIsXqyr3l1cTSbPaLZCeYF8LBZAw27P8kRv6QHxA7LBI6FTgVIQrpiKvwvd67TpS3kASYvIvoHHZBL6RKXKdwXdlk7jZCG6UPZC4fFnCWp6h7Y7XNXHZB5uZBh30ZCEgfe7Em4jGxZALUZD&amp;expires=5184000</p>
+<p>Request:</p>
+<blockquote>
+<p><a href="https://graph.facebook.com/oauth/access_token?client_id=[預授權的應用程式client_id]&amp;client_secret=[預授權的應用程式client_secret]&amp;grant_type=fb_exchange_token&amp;fb_exchange_token=[剛剛獲得的短效accessToken" target="_blank" rel="external">https://graph.facebook.com/oauth/access_token?client_id=[預授權的應用程式client_id]&amp;client_secret=[預授權的應用程式client_secret]&amp;grant_type=fb_exchange_token&amp;fb_exchange_token=[剛剛獲得的短效accessToken</a>]</p>
+</blockquote>
+<p>Response:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">access_token=EAAHFVJ2x6mwBAHwjsxWvhPghIsXqyr3l1cTSbPaLZCeYF8LBZAw27P8kRv6QHxA7LBI6FTgVIQrpiKvwvd67TpS3kASYvIvoHHZBL6RKXKdwXdlk7jZCG6UPZC4fFnCWp6h7Y7XNXHZB5uZBh30ZCEgfe7Em4jGxZALUZD&amp;expires=5184000</span><br></pre></td></tr></table></figure></p>
 <p>此時的accessToken會是兩個月的有效期，其實蠻長了。但是我們要的是永不過期的!</p>
-<p>接著再回到Graph tool<br><a href="https://developers.facebook.com/tools/explorer" target="_blank" rel="external">https://developers.facebook.com/tools/explorer</a><br>將兩個月期效的accessToken貼在存取權仗的欄位<br>Graph API欄位則填入me/accounts, 按送出後，就會列出相關資訊<br>這時候神奇的來了，原本的兩個月期效的accessToken就會變成永不過期的accessToken了</p>
+<p>接著再回到Graph tool</p>
+<blockquote>
+<p><a href="https://developers.facebook.com/tools/explorer" target="_blank" rel="external">https://developers.facebook.com/tools/explorer</a></p>
+</blockquote>
+<p>將兩個月期效的accessToken貼在<code>存取權仗</code>的欄位<br><code>Graph API欄位</code>則填入me, 按送出後，就會列出相關資訊<br>這時候神奇的來了，原本的兩個月期效的accessToken就會變成永不過期的accessToken了</p>
+<p>怎麼讓這個永不過期的accessToken失效呢，最簡單的方式就是移除該app就好了</p>
 <h3 id="查詢access-Token資訊、有效期限"><a href="#查詢access-Token資訊、有效期限" class="headerlink" title="查詢access Token資訊、有效期限"></a>查詢access Token資訊、有效期限</h3><p><a href="https://developers.facebook.com/tools/debug/accesstoken" target="_blank" rel="external">https://developers.facebook.com/tools/debug/accesstoken</a></p>
 
       
