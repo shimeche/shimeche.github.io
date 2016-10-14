@@ -100,7 +100,7 @@ mongod start/running, process 1660看起來是啟用了阿~~~
 mongod start/running, process 1660看起來是啟用了阿~~~
 
 但察看網路服務狀況，仍然沒有出現mongoDB開啟的port12$ netstat -tpnl預設應">
-<meta property="og:updated_time" content="2016-05-26T06:23:49.026Z">
+<meta property="og:updated_time" content="2016-10-14T06:50:55.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mongodb啟用問題">
 <meta name="twitter:description" content="有時候不正常關機或不明原因導致mongoDB停止接著重新啟用mongoDB時，就叫不醒了但執行啟用mongoDB指令時，也沒有出現特別的錯誤，還跟你說啟用了!!?1$ sudo start mongod
@@ -299,6 +299,7 @@ mongod start/running, process 1660看起來是啟用了阿~~~
 <p>mongod start/running, process 1660<br>看起來是啟用了阿~~~</p>
 </blockquote>
 <p>但察看網路服務狀況，仍然沒有出現mongoDB開啟的port<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -tpnl</span><br><span class="line">預設應該要有27017的port</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>這時查看mongoDB的log就能清楚為什麼了</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ more /var/<span class="built_in">log</span>/mongodb/mongod.log</span><br></pre></td></tr></table></figure>
 <blockquote>
