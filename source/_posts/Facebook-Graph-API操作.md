@@ -15,7 +15,7 @@ tags:
 至少勾選pages_show_list權限，其他在視需求勾選，Ex: email...
 
 授權畫面確定後，存取權仗就會出現新的access token
-
+<!-- more -->
 但此時該token的期限只有一小時左右
 
 接著透過瀏覽器或curl要求下面網址

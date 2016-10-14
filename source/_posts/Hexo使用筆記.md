@@ -19,7 +19,7 @@ $ hexo n 這是一篇文章
 or
 $ hexo new 這是一篇文章
 ```
-
+<!-- more -->
 ### 編譯
 ``` bash
 $ hexo g

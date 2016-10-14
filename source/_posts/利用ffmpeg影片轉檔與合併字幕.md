@@ -14,6 +14,7 @@ $ ffmpeg -i sourceVideo.mkv -i sourceSubtitle.srt -c copy outputVideo.mkv
 > -c: copy採用複製模式, 輸出的影像格式與輸入相同。
 
 因為不作視訊或音訊的轉換，也就不需花太久時間, 測試影片約為90min，實際合併字幕約花了35秒
+<!-- more -->
 執行後大致的樣子
 ``` bash
 Input #0, matroska,webm, from 'sourceVideo.mkv':

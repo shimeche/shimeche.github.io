@@ -16,7 +16,7 @@ $ wget -O- [url]
 $ .... | args wget -O a.zip
 ```
 透過pipe取得wget的目標url, args可以將參數傳遞給wget
-
+<!-- more -->
 ### grep
 
 ``` bash

@@ -18,7 +18,7 @@ $ sudo start mongod
 $ netstat -tpnl
 預設應該要有27017的port
 ```
-
+<!-- more -->
 這時查看mongoDB的log就能清楚為什麼了
 
 ``` bash

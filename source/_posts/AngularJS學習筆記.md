@@ -11,7 +11,7 @@ tags:
 其中jqeuryselector就是我們常用的jquery語法
 這邊當然是要以尋找該對應ng-controller的tag為主
 找到後，就可以直接使用
-
+<!-- more -->
 ### 手動更新特定$scope的畫面
 
 常用於非同步的callback, 無法自動觸發angular apply
