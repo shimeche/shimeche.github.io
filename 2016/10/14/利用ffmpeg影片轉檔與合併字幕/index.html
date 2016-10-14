@@ -1,0 +1,559 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="aSakz9uFmiU6xKNqPZAUZAd5ehWoBnZLeOcKi9ID4v4" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="mkv格式, 屬於matroska系列支援單一檔案包含視訊與字幕功能透過ffmpeg指令將字幕封裝到影片檔(mkv格式)
+
+測試版本: ffmpeg 2.7.1 ubuntu 12.041$ ffmpeg -i sourceVideo.mkv -i sourceSubtitle.srt -c copy outputVideo.mkv
+-i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。-c:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用ffmpeg指令影片轉檔與合併字幕">
+<meta property="og:url" content="http://shimeche.github.io/2016/10/14/利用ffmpeg影片轉檔與合併字幕/index.html">
+<meta property="og:site_name" content="阿轉的blog">
+<meta property="og:description" content="mkv格式, 屬於matroska系列支援單一檔案包含視訊與字幕功能透過ffmpeg指令將字幕封裝到影片檔(mkv格式)
+
+測試版本: ffmpeg 2.7.1 ubuntu 12.041$ ffmpeg -i sourceVideo.mkv -i sourceSubtitle.srt -c copy outputVideo.mkv
+-i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。-c:">
+<meta property="og:updated_time" content="2016-10-14T06:39:38.887Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用ffmpeg指令影片轉檔與合併字幕">
+<meta name="twitter:description" content="mkv格式, 屬於matroska系列支援單一檔案包含視訊與字幕功能透過ffmpeg指令將字幕封裝到影片檔(mkv格式)
+
+測試版本: ffmpeg 2.7.1 ubuntu 12.041$ ffmpeg -i sourceVideo.mkv -i sourceSubtitle.srt -c copy outputVideo.mkv
+-i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。-c:">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 利用ffmpeg指令影片轉檔與合併字幕 | 阿轉的blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-79793302-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">阿轉的blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                利用ffmpeg指令影片轉檔與合併字幕
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-10-14T13:59:17+08:00" content="2016-10-14">
+              2016-10-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://zh.wikipedia.org/wiki/Matroska" target="_blank" rel="external">mkv格式, 屬於matroska系列</a>支援單一檔案包含視訊與字幕功能<br>透過ffmpeg指令將字幕封裝到影片檔(mkv格式)</p>
+<blockquote>
+<p>測試版本: <a href="https://www.johnvansickle.com/ffmpeg/" target="_blank" rel="external">ffmpeg 2.7.1</a> ubuntu 12.04<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -i <span class="built_in">source</span>Video.mkv -i <span class="built_in">source</span>Subtitle.srt -c copy outputVideo.mkv</span><br></pre></td></tr></table></figure></p>
+<p>-i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。<br>-c: copy採用複製模式, 輸出的影像格式與輸入相同。</p>
+</blockquote>
+<p>因為不作視訊或音訊的轉換，也就不需花太久時間, 測試影片約為90min，實際合併字幕約花了35秒<br>執行後大致的樣子<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">Input <span class="comment">#0, matroska,webm, from 'sourceVideo.mkv':</span></span><br><span class="line">  Metadata:</span><br><span class="line">    creation_time   : 2014-11-05 23:58:38</span><br><span class="line">    encoder         : libebml v1.3.0 + libmatroska v1.4.1</span><br><span class="line">    TITLE           : EVO</span><br><span class="line">  Duration: 01:29:20.65, start: 0.000000, bitrate: 3688 kb/s</span><br><span class="line">    Chapter <span class="comment">#0:0: start 0.000000, end 328.078000</span></span><br><span class="line">    Metadata:</span><br><span class="line">      title           : Chapter 1</span><br><span class="line">    Chapter <span class="comment">#0:1: start 328.078000, end 520.062000</span></span><br><span class="line">    Metadata:</span><br><span class="line">      title           : Chapter 2</span><br><span class="line">..省略..</span><br><span class="line">    Stream <span class="comment">#0:0(eng): Audio: ac3, 44100 Hz, stereo, fltp, 192 kb/s (default)</span></span><br><span class="line">    Stream <span class="comment">#0:1(eng): Video: h264 (High), yuv420p(tv, bt709), 1280x534 [SAR 1:1 DAR 640:267], 23.98 fps, 23.98 tbr, 1k tbn, 180k tbc (default)</span></span><br><span class="line">Input <span class="comment">#1, srt, from 'sourceSubtitle.srt':</span></span><br><span class="line">  Duration: N/A, bitrate: N/A</span><br><span class="line">    Stream <span class="comment">#1:0: Subtitle: subrip</span></span><br><span class="line">Output <span class="comment">#0, matroska, to 'outputVideo.mkv':</span></span><br><span class="line">  Metadata:</span><br><span class="line">    TITLE           : EVO</span><br><span class="line">    encoder         : Lavf56.36.100</span><br><span class="line">    Chapter <span class="comment">#0:0: start 0.000000, end 328.078000</span></span><br><span class="line">    Metadata:</span><br><span class="line">      title           : Chapter 1</span><br><span class="line">..省略..</span><br><span class="line">    Stream <span class="comment">#0:0(eng): Video: h264 (H264 / 0x34363248), yuv420p, 1280x534 [SAR 1:1 DAR 640:267], q=2-31, 23.98 fps, 23.98 tbr, 1k tbn, 1k tbc (default)</span></span><br><span class="line">    Stream <span class="comment">#0:1(eng): Audio: ac3 ([0] [0][0] / 0x2000), 44100 Hz, stereo, 192 kb/s (default)</span></span><br><span class="line">    Stream <span class="comment">#0:2: Subtitle: subrip</span></span><br><span class="line">Stream mapping:</span><br><span class="line">  Stream <span class="comment">#0:1 -&gt; #0:0 (copy)</span></span><br><span class="line">  Stream <span class="comment">#0:0 -&gt; #0:1 (copy)</span></span><br><span class="line">  Stream <span class="comment">#1:0 -&gt; #0:2 (copy)</span></span><br><span class="line">Press [q] to stop, [?] <span class="keyword">for</span> <span class="built_in">help</span></span><br><span class="line">frame=128527 fps=2812 q=-1.0 Lsize= 2414245kB time=01:29:20.52 bitrate=3689.5kbits/s    </span><br><span class="line">video:2293132kB audio:119065kB subtitle:21kB other streams:0kB global headers:0kB muxing overhead: 0.084050%</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/23/Facebook-Graph-API操作/" rel="next" title="Facebook Graph API操作">
+                <i class="fa fa-chevron-left"></i> Facebook Graph API操作
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Shime Hsu" />
+          <p class="site-author-name" itemprop="name">Shime Hsu</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目錄</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shime Hsu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
