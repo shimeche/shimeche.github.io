@@ -11,7 +11,12 @@ tags:
 $ ffmpeg -i sourceVideo.mkv -i sourceSubtitle.srt -c copy outputVideo.mkv
 ```
 > -i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。
-> -c: copy採用複製模式, 輸出的影像格式與輸入相同。
+> -c: codec縮寫, 輸出的編碼格式codec採用複製模式copy, 輸出的影像格式與輸入相同。
+> 也可以使用-c:a copy 或 -c:v copy 表示針對audio 或 video作copy就好
+``` bash
+$ ffmpeg -i sourceVideo.mkv -i sourceSubtitle.srt -c:a copy -c:v copy outputVideo.mkv
+```
+
 
 因為不作視訊或音訊的轉換，也就不需花太久時間, 測試影片約為90min，實際合併字幕約花了35秒
 <!-- more -->
@@ -53,4 +58,17 @@ Stream mapping:
 Press [q] to stop, [?] for help
 frame=128527 fps=2812 q=-1.0 Lsize= 2414245kB time=01:29:20.52 bitrate=3689.5kbits/s    
 video:2293132kB audio:119065kB subtitle:21kB other streams:0kB global headers:0kB muxing overhead: 0.084050%
+```
+
+上述加入字幕的方法是需要播放器支援字幕切換的，如VLC Player
+如果是無法選擇字幕的播放器(ex: browser player)，或mp4的格式, 可採用-vf 的方式
+(mp4也是可以類似mkv一樣加入一個字幕軌)
+
+> -vf "subtitles=sourceSubtitle.srt" 可將字幕直接寫入影片中，此時就無法在使用-c:v copy, 因為video的部份需要重新運算將字幕寫入
+``` bash
+$ ffmpeg -i sourceVideo.mp4 -vf "subtitles=sourceSubtitle.srt" outputVideo.mp4
+```
+> -vf "subtitles=sourceSubtitle.srt:force_style='Fontsize=24'" 如果覺得預設的字型太小，也可以透過額外的設定指定字幕大小
+``` bash
+$ ffmpeg -i sourceVideo.mp4 -vf "subtitles=sourceSubtitle.srt:force_style='Fontsize=24'" outputVideo.mp4
 ```
