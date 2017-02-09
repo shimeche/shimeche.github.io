@@ -290,7 +290,7 @@
           <p><a href="https://zh.wikipedia.org/wiki/Matroska">mkv格式, 屬於matroska系列</a>支援單一檔案包含視訊與字幕功能<br>透過ffmpeg指令將字幕封裝到影片檔(mkv格式)</p>
 <blockquote>
 <p>測試版本: <a href="https://www.johnvansickle.com/ffmpeg/">ffmpeg 2.7.1</a> ubuntu 12.04<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -i <span class="built_in">source</span>Video.mkv -i <span class="built_in">source</span>Subtitle.srt -c copy outputVideo.mkv</span><br></pre></td></tr></table></figure></p>
-<p>-i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。<br>-c: copy採用複製模式, 輸出的影像格式與輸入相同。</p>
+<p>-i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。<br>-c: codec縮寫, 輸出的編碼格式codec採用複製模式copy, 輸出的影像格式與輸入相同。<br>也可以使用-c:a copy 或 -c:v copy 表示針對audio 或 video作copy就好<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -i <span class="built_in">source</span>Video.mkv -i <span class="built_in">source</span>Subtitle.srt -c:a copy -c:v copy outputVideo.mkv</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <p>因為不作視訊或音訊的轉換，也就不需花太久時間, 測試影片約為90min，實際合併字幕約花了35秒<br>
           <div class="post-more-link text-center">
@@ -1101,7 +1101,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
