@@ -244,6 +244,204 @@
             
               
                 
+                <a class="post-title-link" href="/2017/04/13/Ubuntu-14-04安裝ffmpeg/" itemprop="url">
+                  Ubuntu 14.04安裝ffmpeg
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2017-04-13T15:35:39+08:00" content="2017-04-13">
+              2017-04-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Ubuntu 14.04 版本已經不支援ffmpeg，由Libav取代<br>如果執行安裝ffmpeg套件的指令，會出現以下的錯誤</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install ffmpeg</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree       </span><br><span class="line">Reading state information... Done</span><br><span class="line">E: Unable to locate package mpeg</span><br></pre></td></tr></table></figure>
+<p>另外新增ppa套件來源<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:mc3man/trusty-media</span><br></pre></td></tr></table></figure></p>
+<p>更新套件資訊<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></p>
+<p>再跑一次就可以了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install ffmpeg</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/利用ffmpeg合併m3u8串流影片，並且轉成MP4格式/" itemprop="url">
+                  利用ffmpeg合併m3u8串流影片，並且轉成MP4格式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2017-04-13T15:34:49+08:00" content="2017-04-13">
+              2017-04-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在開啟影片前，先打開Chrome的 F12，才能觀看網路相關的網址</p>
+<p>會發現串流的網路連線狀態，依序下載串流影片<br>media_00000_0.ts, media_00000_1.ts, media_00000_2.ts…其原理就是透過播放器組起來播放<br>所以可以試著用wget指令，把每個網址存成檔案，接著在將它們合併起來，果真能播放！<br>可以一個一個抓<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget http://.......media_00000_0.ts</span><br><span class="line">wget http://.......media_00000_1.ts</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">wget http://.......media_00000_3.ts</span><br></pre></td></tr></table></figure></p>
+<p>也可以透過bash批次抓<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `seq 1 210`;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	wget <span class="string">"http://.......media_00000_"</span><span class="variable">$i</span><span class="string">".ts"</span></span><br><span class="line">    sleep 2</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<p>接著合併<br>可以透過cat一個一個合併，但是這樣會打到死<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat media_00000_0.ts media_00000_1.ts (省略) media_00000_210.ts &gt; media.ts</span><br></pre></td></tr></table></figure></p>
+<p>也可以使用ffmpeg直接合併<br>既然是串流播放，那麼就會有m3u8 list提供給播放器，當作串流依據<br>所以只要找到這個檔案，接著在透過ffmpeg就可以合併了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i media.m3u8 -c copy media.ts</span><br><span class="line">File Type                       : M2T</span><br><span class="line">MIME Type                       : video/mpeg</span><br><span class="line">Audio Stream Type               : MPEG-2 AAC Audio</span><br></pre></td></tr></table></figure></p>
+<p>合併完後會是M2T的格式，是可以正常透過一般撥放器播放，也可以轉成mp4格式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i media.ts -vcodec copy -acodec copy media.mp4</span><br><span class="line">File Type                       : MP4</span><br><span class="line">MIME Type                       : video/mp4</span><br><span class="line">Major Brand                     : MP4  Base Media v1 [IS0 14496-12:2003]</span><br></pre></td></tr></table></figure></p>
+<p>其實也可以直接將m3u8的url直接餵給ffmpeg，就自動下載與合併了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i http://......m3u8 -c copy media.ts</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/14/利用ffmpeg影片轉檔與合併字幕/" itemprop="url">
                   利用ffmpeg指令影片轉檔與合併字幕
                 </a>
@@ -1061,7 +1259,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
