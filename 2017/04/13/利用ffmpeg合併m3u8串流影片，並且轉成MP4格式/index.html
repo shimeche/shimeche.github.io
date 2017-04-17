@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="阿轉的blog">
 <meta property="og:description" content="在開啟影片前，先打開Chrome的 F12，才能觀看網路相關的網址
 會發現串流的網路連線狀態，依序下載串流影片media_00000_0.ts, media_00000_1.ts, media_00000_2.ts…其原理就是透過播放器組起來播放所以可以試著用wget指令，把每個網址存成檔案，接著在將它們合併起來，果真能播放！可以一個一個抓123456wget http://.......medi">
-<meta property="og:updated_time" content="2017-04-13T07:42:59.214Z">
+<meta property="og:updated_time" content="2017-04-17T01:38:07.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用ffmpeg合併m3u8串流影片，並且轉成MP4格式">
 <meta name="twitter:description" content="在開啟影片前，先打開Chrome的 F12，才能觀看網路相關的網址
@@ -291,7 +291,8 @@
 <p>接著合併<br>可以透過cat一個一個合併，但是這樣會打到死<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat media_00000_0.ts media_00000_1.ts (省略) media_00000_210.ts &gt; media.ts</span><br></pre></td></tr></table></figure></p>
 <p>也可以使用ffmpeg直接合併<br>既然是串流播放，那麼就會有m3u8 list提供給播放器，當作串流依據<br>所以只要找到這個檔案，接著在透過ffmpeg就可以合併了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i media.m3u8 -c copy media.ts</span><br><span class="line">File Type                       : M2T</span><br><span class="line">MIME Type                       : video/mpeg</span><br><span class="line">Audio Stream Type               : MPEG-2 AAC Audio</span><br></pre></td></tr></table></figure></p>
 <p>合併完後會是M2T的格式，是可以正常透過一般撥放器播放，也可以轉成mp4格式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i media.ts -vcodec copy -acodec copy media.mp4</span><br><span class="line">File Type                       : MP4</span><br><span class="line">MIME Type                       : video/mp4</span><br><span class="line">Major Brand                     : MP4  Base Media v1 [IS0 14496-12:2003]</span><br></pre></td></tr></table></figure></p>
-<p>其實也可以直接將m3u8的url直接餵給ffmpeg，就自動下載與合併了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i http://......m3u8 -c copy media.ts</span><br></pre></td></tr></table></figure></p>
+<p>其實也可以直接將m3u8的url直接餵給ffmpeg，就自動下載與合併了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i <span class="string">"http://......m3u8"</span> -c copy media.ts</span><br></pre></td></tr></table></figure></p>
+<p>這樣也可以，抓下來後，直接轉為mp4<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i <span class="string">"http://......m3u8"</span> -c copy media.mp4</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
