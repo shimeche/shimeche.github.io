@@ -4,6 +4,11 @@ date: 2017-04-13 15:34:49
 tags:
 ---
 
+嘗試使用ffmpeg指令，下載m3u8來源的串流影片
+Ubuntu 14.04 ffmpeg version git-2017-01-22
+[安裝方式](http://shimeche.github.io/2017/04/13/Ubuntu-14-04%E5%AE%89%E8%A3%9Dffmpeg/)
+
+<!-- more -->
 在開啟影片前，先打開Chrome的 F12，才能觀看網路相關的網址
 
 會發現串流的網路連線狀態，依序下載串流影片
