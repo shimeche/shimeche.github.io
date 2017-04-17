@@ -52,5 +52,9 @@ Major Brand                     : MP4  Base Media v1 [IS0 14496-12:2003]
 ```
 其實也可以直接將m3u8的url直接餵給ffmpeg，就自動下載與合併了 
 ``` bash
-ffmpeg -i http://......m3u8 -c copy media.ts
+ffmpeg -i "http://......m3u8" -c copy media.ts
+```
+這樣也可以，抓下來後，直接轉為mp4
+``` bash
+ffmpeg -i "http://......m3u8" -c copy media.mp4
 ```
