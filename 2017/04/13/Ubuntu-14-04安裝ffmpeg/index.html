@@ -86,19 +86,16 @@
 
 
 
-<meta name="description" content="Ubuntu 14.04 版本已經不支援ffmpeg，由Libav取代如果執行安裝ffmpeg套件的指令，會出現以下的錯誤
-12345$ sudo apt-get install ffmpegReading package lists... DoneBuilding dependency tree       Reading state information... DoneE: Unable t">
+<meta name="description" content="Ubuntu 14.04 版本已經不支援ffmpeg，由Libav取代想要安裝的話，需要手動執行一些步驟">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 14.04安裝ffmpeg">
 <meta property="og:url" content="http://shimeche.github.io/2017/04/13/Ubuntu-14-04安裝ffmpeg/index.html">
 <meta property="og:site_name" content="阿轉的blog">
-<meta property="og:description" content="Ubuntu 14.04 版本已經不支援ffmpeg，由Libav取代如果執行安裝ffmpeg套件的指令，會出現以下的錯誤
-12345$ sudo apt-get install ffmpegReading package lists... DoneBuilding dependency tree       Reading state information... DoneE: Unable t">
-<meta property="og:updated_time" content="2017-04-13T07:40:12.158Z">
+<meta property="og:description" content="Ubuntu 14.04 版本已經不支援ffmpeg，由Libav取代想要安裝的話，需要手動執行一些步驟">
+<meta property="og:updated_time" content="2017-04-17T02:02:16.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu 14.04安裝ffmpeg">
-<meta name="twitter:description" content="Ubuntu 14.04 版本已經不支援ffmpeg，由Libav取代如果執行安裝ffmpeg套件的指令，會出現以下的錯誤
-12345$ sudo apt-get install ffmpegReading package lists... DoneBuilding dependency tree       Reading state information... DoneE: Unable t">
+<meta name="twitter:description" content="Ubuntu 14.04 版本已經不支援ffmpeg，由Libav取代想要安裝的話，需要手動執行一些步驟">
 
 
 
@@ -285,7 +282,7 @@
       
 
       
-        <p>Ubuntu 14.04 版本已經不支援ffmpeg，由Libav取代<br>如果執行安裝ffmpeg套件的指令，會出現以下的錯誤</p>
+        <p>Ubuntu 14.04 版本已經不支援ffmpeg，由Libav取代<br>想要安裝的話，需要手動執行一些步驟<br><a id="more"></a><br>如果使用一般安裝套件指令安裝ffmpeg時，會出現以下的錯誤</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install ffmpeg</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree       </span><br><span class="line">Reading state information... Done</span><br><span class="line">E: Unable to locate package mpeg</span><br></pre></td></tr></table></figure>
 <p>另外新增ppa套件來源<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:mc3man/trusty-media</span><br></pre></td></tr></table></figure></p>
 <p>更新套件資訊<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></p>
