@@ -86,22 +86,15 @@
 
 
 
-<meta name="description" content="使用google API取得的Access Token，可以透過以下網址直接查詢對應的Info
-https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
-正確的話會顯示12345678&amp;#123;  issued_to: &amp;quot;99999999999.apps.googleusercontent.com&amp;quot;,  audi">
-<meta property="og:type" content="article">
-<meta property="og:title" content="查詢google AccessToken狀態">
-<meta property="og:url" content="http://shimeche.github.io/2016/05/18/查詢google-AccessToken狀態/index.html">
+<meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="阿轉的blog">
+<meta property="og:url" content="http://shimeche.github.io/page/2/index.html">
 <meta property="og:site_name" content="阿轉的blog">
-<meta property="og:description" content="使用google API取得的Access Token，可以透過以下網址直接查詢對應的Info
-https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
-正確的話會顯示12345678&amp;#123;  issued_to: &amp;quot;99999999999.apps.googleusercontent.com&amp;quot;,  audi">
-<meta property="og:updated_time" content="2017-04-13T07:31:00.474Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="查詢google AccessToken狀態">
-<meta name="twitter:description" content="使用google API取得的Access Token，可以透過以下網址直接查詢對應的Info
-https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
-正確的話會顯示12345678&amp;#123;  issued_to: &amp;quot;99999999999.apps.googleusercontent.com&amp;quot;,  audi">
+<meta name="twitter:title" content="阿轉的blog">
+<meta name="twitter:description">
 
 
 
@@ -119,7 +112,7 @@ https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
   };
 </script>
 
-  <title> 查詢google AccessToken狀態 | 阿轉的blog </title>
+  <title> 阿轉的blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -149,7 +142,9 @@ https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -226,9 +221,9 @@ https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
   
@@ -248,7 +243,10 @@ https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
             
             
               
-                查詢google AccessToken狀態
+                
+                <a class="post-title-link" href="/2016/05/13/常用bash指令/" itemprop="url">
+                  常用bash指令
+                </a>
               
             
           </h1>
@@ -260,8 +258,8 @@ https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-18T09:44:03+08:00" content="2016-05-18">
-              2016-05-18
+            <time itemprop="dateCreated" datetime="2016-05-13T14:04:43+08:00" content="2016-05-13">
+              2016-05-13
             </time>
           </span>
 
@@ -288,30 +286,25 @@ https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
       
 
       
-        <p>使用google API取得的Access Token，可以透過以下網址直接查詢對應的Info</p>
-<p><a href="https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=" target="_blank" rel="external">https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=</a></p>
-<h3 id="正確的話會顯示"><a href="#正確的話會顯示" class="headerlink" title="正確的話會顯示"></a>正確的話會顯示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  issued_to: &quot;99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  audience: &quot;&quot;99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  user_id: &quot;11106999999999999999999999&quot;,</span><br><span class="line">  scope: &quot;https://www.googleapis.com/auth/plus.me&quot;,</span><br><span class="line">  expires_in: 3504,</span><br><span class="line">  access_type: &quot;offline&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中，expires_in是剩餘幾秒就會過期<br><a id="more"></a></p>
-<h3 id="失敗的話則會顯示"><a href="#失敗的話則會顯示" class="headerlink" title="失敗的話則會顯示"></a>失敗的話則會顯示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  error: &quot;invalid_token&quot;,</span><br><span class="line">  error_description: &quot;Invalid Value&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>也可以查詢id token的info</p>
-<p><a href="https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=" target="_blank" rel="external">https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=</a></p>
-<p>預期回傳如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  iss: &quot;accounts.google.com&quot;,</span><br><span class="line">  at_hash: &quot;qqqqqqqqqqqqqqqqqqqqqqqqqqq&quot;,</span><br><span class="line">  aud: &quot;99999999999-99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  sub: &quot;99999999999&quot;,</span><br><span class="line">  email_verified: &quot;true&quot;,</span><br><span class="line">  azp: &quot;99999999999-99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  email: &quot;test@gmail.com&quot;,</span><br><span class="line">  iat: &quot;1463550722&quot;,</span><br><span class="line">  exp: &quot;1463554322&quot;,</span><br><span class="line">  alg: &quot;RS256&quot;,</span><br><span class="line">  kid: &quot;99999999999&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其中，sub其實就是google’s userId</p>
-<p>如何透過線上工具直接取得access token呢？<br>可以使用<a href="https://developers.google.com/oauthplayground/" target="_blank" rel="external">oauthplayground</a></p>
-
-      
-    </div>
-
-    <div>
-      
+        
+          <h3 id="WGet"><a href="#WGet" class="headerlink" title="WGet"></a>WGet</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -O- [url]</span><br></pre></td></tr></table></figure>
+<p>將wget取得的內容，直接轉往STUDSTO(pipe方式)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ .... | args wget -O a.zip</span><br></pre></td></tr></table></figure>
+<p>透過pipe取得wget的目標url, args可以將參數傳遞給wget<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/13/常用bash指令/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
 
     <div>
       
-        
+    </div>
 
+    <div>
       
     </div>
 
@@ -319,36 +312,121 @@ https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/05/17/超商咖啡價格分析/" rel="next" title="超商咖啡價格分析">
-                <i class="fa fa-chevron-left"></i> 超商咖啡價格分析
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/26/Mongodb啟用問題/" rel="prev" title="Mongodb啟用問題">
-                Mongodb啟用問題 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
       
+      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/12/Hexo使用筆記/" itemprop="url">
+                  Hexo使用筆記
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-05-12T18:02:25+08:00" content="2016-05-12">
+              2016-05-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="發表文章"><a href="#發表文章" class="headerlink" title="發表文章"></a>發表文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n [<span class="built_in">type</span>] [title]</span><br><span class="line">or</span><br><span class="line">$ hexo new [<span class="built_in">type</span>] [title]</span><br></pre></td></tr></table></figure>
+<p>[type]可以是post, page or draft, 預設是post</p>
+<h3 id="發表文章-Example"><a href="#發表文章-Example" class="headerlink" title="發表文章 Example"></a>發表文章 Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n 這是一篇文章</span><br><span class="line">or</span><br><span class="line">$ hexo new 這是一篇文章</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/12/Hexo使用筆記/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
       
     </div>
-  </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -356,10 +434,6 @@ https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -379,17 +453,8 @@ https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -425,17 +490,6 @@ https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#正確的話會顯示"><span class="nav-number">1.</span> <span class="nav-text">正確的話會顯示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#失敗的話則會顯示"><span class="nav-number">2.</span> <span class="nav-text">失敗的話則會顯示</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -532,10 +586,6 @@ https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 
