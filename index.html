@@ -86,15 +86,12 @@
 
 
 
-<meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="阿轉的blog">
 <meta property="og:url" content="http://shimeche.github.io/index.html">
 <meta property="og:site_name" content="阿轉的blog">
-<meta property="og:description">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿轉的blog">
-<meta name="twitter:description">
 
 
 
@@ -222,6 +219,102 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/24/npm用法/" itemprop="url">
+                  npm用法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2017-04-24T17:30:38+08:00" content="2017-04-24">
+              2017-04-24
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>有關npm各種用法</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/04/24/npm用法/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -670,8 +763,8 @@
         
           <p><a href="https://zh.wikipedia.org/wiki/Matroska">mkv格式, 屬於matroska系列</a>支援單一檔案包含視訊與字幕功能<br>透過ffmpeg指令將字幕封裝到影片檔(mkv格式)</p>
 <blockquote>
-<p>測試版本: <a href="https://www.johnvansickle.com/ffmpeg/">ffmpeg 2.7.1</a> ubuntu 12.04<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -i <span class="built_in">source</span>Video.mkv -i <span class="built_in">source</span>Subtitle.srt -c copy outputVideo.mkv</span><br></pre></td></tr></table></figure></p>
-<p>-i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。<br>-c: codec縮寫, 輸出的編碼格式codec採用複製模式copy, 輸出的影像格式與輸入相同。<br>也可以使用-c:a copy 或 -c:v copy 表示針對audio 或 video作copy就好<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -i <span class="built_in">source</span>Video.mkv -i <span class="built_in">source</span>Subtitle.srt -c:a copy -c:v copy outputVideo.mkv</span><br></pre></td></tr></table></figure></p>
+<p>測試版本: <a href="https://www.johnvansickle.com/ffmpeg/">ffmpeg 2.7.1</a> ubuntu 12.04<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ffmpeg -i <span class="built_in">source</span>Video.mkv -i <span class="built_in">source</span>Subtitle.srt -c copy outputVideo.mkv</div></pre></td></tr></table></figure></p>
+<p>-i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。<br>-c: codec縮寫, 輸出的編碼格式codec採用複製模式copy, 輸出的影像格式與輸入相同。<br>也可以使用-c:a copy 或 -c:v copy 表示針對audio 或 video作copy就好<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ffmpeg -i <span class="built_in">source</span>Video.mkv -i <span class="built_in">source</span>Subtitle.srt -c:a copy -c:v copy outputVideo.mkv</div></pre></td></tr></table></figure></p>
 </blockquote>
 <p>因為不作視訊或音訊的轉換，也就不需花太久時間, 測試影片約為90min，實際合併字幕約花了35秒<br>
           <div class="post-more-link text-center">
@@ -871,11 +964,11 @@
 
       
         
-          <p>有時候不正常關機或不明原因導致mongoDB停止<br>接著重新啟用mongoDB時，就叫不醒了<br>但執行啟用mongoDB指令時，也沒有出現特別的錯誤，還跟你說啟用了!!?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo start mongod</span><br></pre></td></tr></table></figure></p>
+          <p>有時候不正常關機或不明原因導致mongoDB停止<br>接著重新啟用mongoDB時，就叫不醒了<br>但執行啟用mongoDB指令時，也沒有出現特別的錯誤，還跟你說啟用了!!?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo start mongod</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>mongod start/running, process 1660<br>看起來是啟用了阿~~~</p>
 </blockquote>
-<p>但察看網路服務狀況，仍然沒有出現mongoDB開啟的port<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -tpnl</span><br><span class="line">預設應該要有27017的port</span><br></pre></td></tr></table></figure></p>
+<p>但察看網路服務狀況，仍然沒有出現mongoDB開啟的port<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ netstat -tpnl</div><div class="line">預設應該要有27017的port</div></pre></td></tr></table></figure></p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/26/Mongodb啟用問題/#more" rel="contents">
               閱讀全文 &raquo;
@@ -973,7 +1066,7 @@
         
           <p>使用google API取得的Access Token，可以透過以下網址直接查詢對應的Info</p>
 <p><a href="https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=">https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=</a></p>
-<h3 id="正確的話會顯示"><a href="#正確的話會顯示" class="headerlink" title="正確的話會顯示"></a>正確的話會顯示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  issued_to: &quot;99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  audience: &quot;&quot;99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  user_id: &quot;11106999999999999999999999&quot;,</span><br><span class="line">  scope: &quot;https://www.googleapis.com/auth/plus.me&quot;,</span><br><span class="line">  expires_in: 3504,</span><br><span class="line">  access_type: &quot;offline&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="正確的話會顯示"><a href="#正確的話會顯示" class="headerlink" title="正確的話會顯示"></a>正確的話會顯示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  issued_to: &quot;99999999999.apps.googleusercontent.com&quot;,</div><div class="line">  audience: &quot;&quot;99999999999.apps.googleusercontent.com&quot;,</div><div class="line">  user_id: &quot;11106999999999999999999999&quot;,</div><div class="line">  scope: &quot;https://www.googleapis.com/auth/plus.me&quot;,</div><div class="line">  expires_in: 3504,</div><div class="line">  access_type: &quot;offline&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>其中，expires_in是剩餘幾秒就會過期<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/18/查詢google-AccessToken狀態/#more" rel="contents">
@@ -1108,102 +1201,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/16/AngularJS學習筆記/" itemprop="url">
-                  AngularJS學習筆記
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-16T17:49:33+08:00" content="2016-05-16">
-              2016-05-16
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="取得其他controller的scope"><a href="#取得其他controller的scope" class="headerlink" title="取得其他controller的scope"></a>取得其他controller的scope</h3><p>每個controller都有自己的$scope，如何取得其他ctrl的$scope呢？<br>可以透過angular.element(“jquery-selector”).scope();取得<br>其中jqeuryselector就是我們常用的jquery語法<br>這邊當然是要以尋找該對應ng-controller的tag為主<br>找到後，就可以直接使用<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/16/AngularJS學習筆記/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1249,7 +1246,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
