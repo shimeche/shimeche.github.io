@@ -87,6 +87,7 @@
 
 
 <meta name="description" content="Ubuntu 14.04 版本已經不支援ffmpeg，由Libav取代想要安裝的話，需要手動執行一些步驟">
+<meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 14.04安裝ffmpeg">
 <meta property="og:url" content="http://shimeche.github.io/2017/04/13/Ubuntu-14-04安裝ffmpeg/index.html">
@@ -283,10 +284,10 @@
 
       
         <p>Ubuntu 14.04 版本已經不支援ffmpeg，由Libav取代<br>想要安裝的話，需要手動執行一些步驟<br><a id="more"></a><br>如果使用一般安裝套件指令安裝ffmpeg時，會出現以下的錯誤</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install ffmpeg</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree       </span><br><span class="line">Reading state information... Done</span><br><span class="line">E: Unable to locate package mpeg</span><br></pre></td></tr></table></figure>
-<p>另外新增ppa套件來源<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo add-apt-repository ppa:mc3man/trusty-media</span><br></pre></td></tr></table></figure></p>
-<p>更新套件資訊<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></p>
-<p>再跑一次就可以了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install ffmpeg</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install ffmpeg</div><div class="line">Reading package lists... Done</div><div class="line">Building dependency tree       </div><div class="line">Reading state information... Done</div><div class="line">E: Unable to locate package mpeg</div></pre></td></tr></table></figure>
+<p>另外新增ppa套件來源<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo add-apt-repository ppa:mc3man/trusty-media</div></pre></td></tr></table></figure></p>
+<p>更新套件資訊<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div></pre></td></tr></table></figure></p>
+<p>再跑一次就可以了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install ffmpeg</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -311,16 +312,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/13/利用ffmpeg合併m3u8串流影片，並且轉成MP4格式/" rel="next" title="利用ffmpeg合併m3u8串流影片，並且轉成MP4格式">
-                <i class="fa fa-chevron-left"></i> 利用ffmpeg合併m3u8串流影片，並且轉成MP4格式
+              <a href="/2017/04/19/透過ngrok讓外網可以瀏覽本機服務/" rel="next" title="透過ngrok讓外網可以瀏覽本機服務">
+                <i class="fa fa-chevron-left"></i> 透過ngrok讓外網可以瀏覽本機服務
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/19/透過ngrok讓外網可以瀏覽本機服務/" rel="prev" title="透過ngrok讓外網可以瀏覽本機服務">
-                透過ngrok讓外網可以瀏覽本機服務 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/13/利用ffmpeg合併m3u8串流影片，並且轉成MP4格式/" rel="prev" title="利用ffmpeg合併m3u8串流影片，並且轉成MP4格式">
+                利用ffmpeg合併m3u8串流影片，並且轉成MP4格式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -389,7 +390,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
