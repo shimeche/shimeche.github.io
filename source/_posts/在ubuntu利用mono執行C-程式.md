@@ -45,6 +45,7 @@ File name: 'any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null'
 ```
 $ MONO_PATH=bin mono file.exe
 ```
+這樣就可以解決mono執行時，找不到位於其他目錄Dll的問題
 
 另外，透過以下方式就知道實際執行時，mono的執行過程
 ```
