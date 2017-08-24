@@ -32,3 +32,9 @@ npm install hexo -save
 ```
 npm install
 ```
+
+### 更新npm本身
+將npm更新到最新版本，而且加上-g就是安裝在全域的環境
+```
+npm install npm@latest -g
+```
