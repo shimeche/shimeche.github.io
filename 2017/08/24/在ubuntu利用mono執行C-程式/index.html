@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://shimeche.github.io/2017/08/24/在ubuntu利用mono執行C-程式/index.html">
 <meta property="og:site_name" content="阿轉的blog">
 <meta property="og:description" content="不需要微軟的環境就可以編譯與執行C#，真的蠻方便的mac(osx)也可以，但還沒實際試過mono在ubuntu安裝步驟挺簡單的，可以參考底下的Ref.">
-<meta property="og:updated_time" content="2017-08-24T06:54:07.294Z">
+<meta property="og:updated_time" content="2017-08-24T08:57:06.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在ubuntu利用mono執行C#程式">
 <meta name="twitter:description" content="不需要微軟的環境就可以編譯與執行C#，真的蠻方便的mac(osx)也可以，但還沒實際試過mono在ubuntu安裝步驟挺簡單的，可以參考底下的Ref.">
@@ -290,6 +290,7 @@
 <h3 id="mono"><a href="#mono" class="headerlink" title="mono"></a>mono</h3><p>執行exe檔的指令，很簡單的執行方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mono file.exe</div></pre></td></tr></table></figure></p>
 <p>預設執行時，會去尋找編譯時所參照的dll<br>優先會去找跟exe檔同目錄的dll，沒有的話就會去找/usr/lib/底下，都沒有的話基本上就會報錯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Unhandled Exception:</div><div class="line">System.IO.FileNotFoundException: Could not load file or assembly &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos; or one of its dependencies.</div><div class="line">File name: &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos;</div><div class="line">[ERROR] FATAL UNHANDLED EXCEPTION: System.IO.FileNotFoundException: Could not load file or assembly &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos; or one of its dependencies.</div><div class="line">File name: &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos;</div></pre></td></tr></table></figure></p>
 <p>所以如果參照的dll跟exe並不在一起，就要透過環境變數path的方式來執行，例如參照DLL放在bin目錄下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ MONO_PATH=bin mono file.exe</div></pre></td></tr></table></figure></p>
+<p>這樣就可以解決mono執行時，找不到位於其他目錄Dll的問題</p>
 <p>另外，透過以下方式就知道實際執行時，mono的執行過程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ MONO_LOG_LEVEL=debug mono file.exe</div></pre></td></tr></table></figure></p>
 <h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref:"></a>Ref:</h2><ul>
 <li>Mono Office Site<br><a href="http://www.mono-project.com/" target="_blank" rel="external">http://www.mono-project.com/</a></li>
