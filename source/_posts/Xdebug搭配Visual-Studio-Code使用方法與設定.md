@@ -14,6 +14,21 @@ php 5
 開發端與Server端不在同一台電腦。
 php執行環境在遠端，vscode在本地，透過xdebug.remote功能，可以達到遠端debug的需求。
 
+### 檢查xdebug是否已安裝
+cli:
+```
+php -i | grep 'xdebug.remote_enable'
+```
+{% asset_img php_info_remote.png 已啟用xdebug %}
+有安裝並啟用的話，就會出現上方的訊息。沒有任何訊息，則表示要安裝並啟用。
+
+web:
+```
+<?php
+phpinfo();
+```
+將上方指令碼存成php檔，並透過web server讀取查看phpinfo
+
 ### 安裝xdebug
 ```
 # sudo apt-get install php5-xdebug
@@ -44,3 +59,10 @@ remote_connect_back 如果設定為1，預設會將debug資訊拋往client，也
 
 因此必須要小心設定。對了，這個設定值對CLI無效。
 
+記得要重新啟動服務
+
+### 重新啟動服務
+ubuntu_nginx+php:
+```
+service php5-fpm restart
+```
