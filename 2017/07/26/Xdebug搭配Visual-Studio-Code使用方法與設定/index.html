@@ -93,10 +93,12 @@
 <meta property="og:url" content="http://shimeche.github.io/2017/07/26/Xdebug搭配Visual-Studio-Code使用方法與設定/index.html">
 <meta property="og:site_name" content="阿轉的blog">
 <meta property="og:description" content="方便的在vc code透過xdebug進行php的偵錯">
-<meta property="og:updated_time" content="2017-08-24T06:56:33.814Z">
+<meta property="og:image" content="http://shimeche.github.io/2017/07/26/Xdebug搭配Visual-Studio-Code使用方法與設定/php_info_remote.png">
+<meta property="og:updated_time" content="2018-02-02T06:35:49.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xdebug搭配Visual Studio Code使用方法與設定">
 <meta name="twitter:description" content="方便的在vc code透過xdebug進行php的偵錯">
+<meta name="twitter:image" content="http://shimeche.github.io/2017/07/26/Xdebug搭配Visual-Studio-Code使用方法與設定/php_info_remote.png">
 
 
 
@@ -286,6 +288,11 @@
         <p>方便的在vc code透過xdebug進行php的偵錯<br><a id="more"></a></p>
 <h3 id="執行環境"><a href="#執行環境" class="headerlink" title="執行環境"></a>執行環境</h3><p>ubuntu 14.04<br>nginx or apache or cli<br>visual studio code 1.14.1<br>php 5</p>
 <p>開發端與Server端不在同一台電腦。<br>php執行環境在遠端，vscode在本地，透過xdebug.remote功能，可以達到遠端debug的需求。</p>
+<h3 id="檢查xdebug是否已安裝"><a href="#檢查xdebug是否已安裝" class="headerlink" title="檢查xdebug是否已安裝"></a>檢查xdebug是否已安裝</h3><p>cli:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php -i | grep &apos;xdebug.remote_enable&apos;</div></pre></td></tr></table></figure></p>
+<img src="/2017/07/26/Xdebug搭配Visual-Studio-Code使用方法與設定/php_info_remote.png" alt="已啟用xdebug" title="已啟用xdebug">
+<p>有安裝並啟用的話，就會出現上方的訊息。沒有任何訊息，則表示要安裝並啟用。</p>
+<p>web:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">phpinfo();</div></pre></td></tr></table></figure></p>
+<p>將上方指令碼存成php檔，並透過web server讀取查看phpinfo</p>
 <h3 id="安裝xdebug"><a href="#安裝xdebug" class="headerlink" title="安裝xdebug"></a>安裝xdebug</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># sudo apt-get install php5-xdebug</div></pre></td></tr></table></figure>
 <h3 id="設定xdebug-ini"><a href="#設定xdebug-ini" class="headerlink" title="設定xdebug.ini"></a>設定xdebug.ini</h3><p>編輯xdebug設定檔，加上remote相關資訊<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># vim /etc/php5/mods-available/xdebug.ini</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">zend_extension = xdebug.so</div><div class="line">xdebug.remote_enable = 1</div><div class="line">xdebug.remote_autostart = 1</div><div class="line">xdebug.remote_handler = dbgp</div><div class="line">xdebug.remote_host = 172.17.0.1     ;指定vscode所在的IP</div><div class="line">xdebug.remote_connect_back = 1      ;如果為1，則會忽略remote_host</div><div class="line">xdebug.remote_port = 9000</div><div class="line"></div><div class="line">xdebug.remote_log = &quot;/var/log/xdebug.log&quot;</div></pre></td></tr></table></figure>
@@ -293,6 +300,8 @@
 <p>remote_connect_back 如果設定為1，預設會將debug資訊拋往client，也就是任意開發端。</p>
 <p>只要是對server請求的client都可以得到xdebug_session進行debug</p>
 <p>因此必須要小心設定。對了，這個設定值對CLI無效。</p>
+<p>記得要重新啟動服務</p>
+<h3 id="重新啟動服務"><a href="#重新啟動服務" class="headerlink" title="重新啟動服務"></a>重新啟動服務</h3><p>ubuntu_nginx+php:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service php5-fpm restart</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -395,7 +404,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -427,7 +436,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#執行環境"><span class="nav-number">1.</span> <span class="nav-text">執行環境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝xdebug"><span class="nav-number">2.</span> <span class="nav-text">安裝xdebug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定xdebug-ini"><span class="nav-number">3.</span> <span class="nav-text">設定xdebug.ini</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#執行環境"><span class="nav-number">1.</span> <span class="nav-text">執行環境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#檢查xdebug是否已安裝"><span class="nav-number">2.</span> <span class="nav-text">檢查xdebug是否已安裝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝xdebug"><span class="nav-number">3.</span> <span class="nav-text">安裝xdebug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定xdebug-ini"><span class="nav-number">4.</span> <span class="nav-text">設定xdebug.ini</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新啟動服務"><span class="nav-number">5.</span> <span class="nav-text">重新啟動服務</span></a></li></ol></div>
             
           </div>
         </section>
@@ -446,7 +455,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

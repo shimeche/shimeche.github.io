@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="取得無期限token方法 https://developers.facebook.com/tools/explorer  選擇想要授權的應用程式 選擇Get User Access Token 至少勾選pages_show_list權限，其他在視需求勾選，Ex: email… 授權畫面確定後，存取權仗就會出現新的access token">
+<meta name="description" content="下載mssql jdbc driverhttps://docs.microsoft.com/en-us/sql/connect/jdbc/using-the-jdbc-driver logstash for jdbc pluginhttps://github.com/logstash-plugins/logstash-input-jdbc 如果執行後，只出現一筆資料，則有可能是被覆蓋了，檢查ind">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Facebook Graph API操作">
-<meta property="og:url" content="http://shimeche.github.io/2016/06/23/Facebook-Graph-API操作/index.html">
+<meta property="og:title" content="Logstash使用筆記">
+<meta property="og:url" content="http://shimeche.github.io/2017/09/20/Logstash使用筆記/index.html">
 <meta property="og:site_name" content="阿轉的blog">
-<meta property="og:description" content="取得無期限token方法 https://developers.facebook.com/tools/explorer  選擇想要授權的應用程式 選擇Get User Access Token 至少勾選pages_show_list權限，其他在視需求勾選，Ex: email… 授權畫面確定後，存取權仗就會出現新的access token">
-<meta property="og:updated_time" content="2017-04-13T07:31:00.930Z">
+<meta property="og:description" content="下載mssql jdbc driverhttps://docs.microsoft.com/en-us/sql/connect/jdbc/using-the-jdbc-driver logstash for jdbc pluginhttps://github.com/logstash-plugins/logstash-input-jdbc 如果執行後，只出現一筆資料，則有可能是被覆蓋了，檢查ind">
+<meta property="og:updated_time" content="2017-09-20T09:28:14.878Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Facebook Graph API操作">
-<meta name="twitter:description" content="取得無期限token方法 https://developers.facebook.com/tools/explorer  選擇想要授權的應用程式 選擇Get User Access Token 至少勾選pages_show_list權限，其他在視需求勾選，Ex: email… 授權畫面確定後，存取權仗就會出現新的access token">
+<meta name="twitter:title" content="Logstash使用筆記">
+<meta name="twitter:description" content="下載mssql jdbc driverhttps://docs.microsoft.com/en-us/sql/connect/jdbc/using-the-jdbc-driver logstash for jdbc pluginhttps://github.com/logstash-plugins/logstash-input-jdbc 如果執行後，只出現一筆資料，則有可能是被覆蓋了，檢查ind">
 
 
 
@@ -114,7 +114,7 @@
   };
 </script>
 
-  <title> Facebook Graph API操作 | 阿轉的blog </title>
+  <title> Logstash使用筆記 | 阿轉的blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -243,7 +243,7 @@
             
             
               
-                Facebook Graph API操作
+                Logstash使用筆記
               
             
           </h1>
@@ -255,8 +255,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-06-23T10:41:25+08:00" content="2016-06-23">
-              2016-06-23
+            <time itemprop="dateCreated" datetime="2017-09-20T17:27:59+08:00" content="2017-09-20">
+              2017-09-20
             </time>
           </span>
 
@@ -283,27 +283,24 @@
       
 
       
-        <h3 id="取得無期限token方法"><a href="#取得無期限token方法" class="headerlink" title="取得無期限token方法"></a>取得無期限token方法</h3><blockquote>
-<p><a href="https://developers.facebook.com/tools/explorer" target="_blank" rel="external">https://developers.facebook.com/tools/explorer</a></p>
-</blockquote>
-<p>選擇想要授權的應用程式</p>
-<p>選擇Get User Access Token</p>
-<p>至少勾選pages_show_list權限，其他在視需求勾選，Ex: email…</p>
-<p>授權畫面確定後，存取權仗就會出現新的access token<br><a id="more"></a><br>但此時該token的期限只有一小時左右</p>
-<p>接著透過瀏覽器或curl要求下面網址</p>
-<p>Request:</p>
-<blockquote>
-<p><a href="https://graph.facebook.com/oauth/access_token?client_id=[預授權的應用程式client_id]&amp;client_secret=[預授權的應用程式client_secret]&amp;grant_type=fb_exchange_token&amp;fb_exchange_token=[剛剛獲得的短效accessToken" target="_blank" rel="external">https://graph.facebook.com/oauth/access_token?client_id=[預授權的應用程式client_id]&amp;client_secret=[預授權的應用程式client_secret]&amp;grant_type=fb_exchange_token&amp;fb_exchange_token=[剛剛獲得的短效accessToken</a>]</p>
-</blockquote>
-<p>Response:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">access_token=EAAHFVJ2x6mwBAHwjsxWvhPghIsXqyr3l1cTSbPaLZCeYF8LBZAw27P8kRv6QHxA7LBI6FTgVIQrpiKvwvd67TpS3kASYvIvoHHZBL6RKXKdwXdlk7jZCG6UPZC4fFnCWp6h7Y7XNXHZB5uZBh30ZCEgfe7Em4jGxZALUZD&amp;expires=5184000</div></pre></td></tr></table></figure></p>
-<p>此時的accessToken會是兩個月的有效期，其實蠻長了。但是我們要的是永不過期的!</p>
-<p>接著再回到Graph tool</p>
-<blockquote>
-<p><a href="https://developers.facebook.com/tools/explorer" target="_blank" rel="external">https://developers.facebook.com/tools/explorer</a></p>
-</blockquote>
-<p>將兩個月期效的accessToken貼在<code>存取權仗</code>的欄位<br><code>Graph API欄位</code>則填入me, 按送出後，就會列出相關資訊<br>這時候神奇的來了，原本的兩個月期效的accessToken就會變成永不過期的accessToken了</p>
-<p>怎麼讓這個永不過期的accessToken失效呢，最簡單的方式就是移除該app就好了</p>
-<h3 id="查詢access-Token資訊、有效期限"><a href="#查詢access-Token資訊、有效期限" class="headerlink" title="查詢access Token資訊、有效期限"></a>查詢access Token資訊、有效期限</h3><p><a href="https://developers.facebook.com/tools/debug/accesstoken" target="_blank" rel="external">https://developers.facebook.com/tools/debug/accesstoken</a></p>
+        <p>下載mssql jdbc driver<br><a href="https://docs.microsoft.com/en-us/sql/connect/jdbc/using-the-jdbc-driver" target="_blank" rel="external">https://docs.microsoft.com/en-us/sql/connect/jdbc/using-the-jdbc-driver</a></p>
+<p>logstash for jdbc plugin<br><a href="https://github.com/logstash-plugins/logstash-input-jdbc" target="_blank" rel="external">https://github.com/logstash-plugins/logstash-input-jdbc</a></p>
+<p>如果執行後，只出現一筆資料，則有可能是被覆蓋了，檢查index中_id是否都長的一樣</p>
+<p>可以透過mutate plugin<br>過濾html tag, 更改欄位名稱，合併或增加欄位</p>
+<p>使用分頁的時候，查詢語法不能包含order by的條件</p>
+<p>clean_run =&gt; true<br>每次都會清空last_run的計數器</p>
+<p>last_run_value 會是查詢結果的最後一筆資料，所以以時間排序的話，就需要使用遞增排序，才能取到最近的時間</p>
+<p>多個設定檔時，input會獨立存在，filter、output則會合併共用</p>
+<p>參考教學<br><a href="http://www.codingmecha.com/tag/logstash/" target="_blank" rel="external">http://www.codingmecha.com/tag/logstash/</a></p>
+<p>logstash設定檔也可以寫判斷式？<br>logstash if/else表达式<br><a href="http://vinc.top/2016/07/15/logstash-ifelse%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_blank" rel="external">http://vinc.top/2016/07/15/logstash-ifelse%E8%A1%A8%E8%BE%BE%E5%BC%8F/</a></p>
+<p>簡體中文教學<br><a href="https://kibana.logstash.es/content/logstash/get-start/hello-world.html" target="_blank" rel="external">https://kibana.logstash.es/content/logstash/get-start/hello-world.html</a></p>
+<p>logstash for jdbc doc<br><a href="https://www.elastic.co/guide/en/logstash/current/plugins-inputs-jdbc.html#plugins-inputs-jdbc-record_last_run" target="_blank" rel="external">https://www.elastic.co/guide/en/logstash/current/plugins-inputs-jdbc.html#plugins-inputs-jdbc-record_last_run</a></p>
+<p>mutate使用方法<br><a href="https://www.elastic.co/guide/en/logstash/current/plugins-filters-mutate.html#plugins-filters-mutate-rename" target="_blank" rel="external">https://www.elastic.co/guide/en/logstash/current/plugins-filters-mutate.html#plugins-filters-mutate-rename</a></p>
+<p>logstash config example<br><a href="https://www.elastic.co/guide/en/logstash/current/config-examples.html" target="_blank" rel="external">https://www.elastic.co/guide/en/logstash/current/config-examples.html</a></p>
+<p>列出logstash plugins<br><a href="https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html" target="_blank" rel="external">https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html</a></p>
+<p>設定檔<br>output加入以下，則會在consolo出現相關訊息<br>output{<br>  stdout {<br>    codec =&gt; rubydebug<br>  }<br>}</p>
+<p>logstash in unix 資料夾定義<br><a href="https://www.elastic.co/guide/en/logstash/current/dir-layout.html" target="_blank" rel="external">https://www.elastic.co/guide/en/logstash/current/dir-layout.html</a></p>
+<p>output加入document_id，數值可以利用%{}方式指定為查詢結果的欄位，例如%{id}</p>
 
       
     </div>
@@ -328,16 +325,12 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/14/利用ffmpeg影片轉檔與合併字幕/" rel="next" title="利用ffmpeg指令影片轉檔與合併字幕">
-                <i class="fa fa-chevron-left"></i> 利用ffmpeg指令影片轉檔與合併字幕
-              </a>
-            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/26/Mongodb啟用問題/" rel="prev" title="Mongodb啟用問題">
-                Mongodb啟用問題 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/24/在ubuntu利用mono執行C-程式/" rel="prev" title="在ubuntu利用mono執行C#程式">
+                在ubuntu利用mono執行C#程式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -438,7 +431,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#取得無期限token方法"><span class="nav-number">1.</span> <span class="nav-text">取得無期限token方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查詢access-Token資訊、有效期限"><span class="nav-number">2.</span> <span class="nav-text">查詢access Token資訊、有效期限</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
         </section>
