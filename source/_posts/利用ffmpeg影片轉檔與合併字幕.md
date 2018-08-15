@@ -75,7 +75,7 @@ $ ffmpeg -i sourceVideo.mp4 -vf "subtitles=sourceSubtitle.srt:force_style='Fonts
 
 ## 批次轉換多個檔案
 想要一次轉換多個檔案的話，可以透過command的for指令達成
-```
+``` bash
 $ for a in *.mp4; do ffmpeg -i "$a" "${a%.mp4}.mpeg"
 ```
 利用for指令，取出符合*.mp4的檔案名稱
@@ -86,6 +86,6 @@ output-file-name的位置擺放${a%.mp4}.mpeg
 而${a%.mp4}將原本的檔名符合結尾包含.mp4的取代為不包含.mp4的單純檔案名稱
 這樣最後輸出的檔名才會是filename.mpeg
 也可以利用以下的for+echo指令，預覽即將執行的指令為何
-```
+``` bash
 $ for a in *.mp4; do echo "ffmpeg -i \"$a\" \"${a%.mp4}.mpeg\""; done
 ```
