@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://shimeche.github.io/2016/10/14/利用ffmpeg影片轉檔與合併字幕/index.html">
 <meta property="og:site_name" content="阿轉的blog">
 <meta property="og:description" content="mkv格式, 屬於matroska系列支援單一檔案包含視訊與字幕功能透過ffmpeg指令將字幕封裝到影片檔(mkv格式)  測試版本: ffmpeg 2.7.1 ubuntu 12.041$ ffmpeg -i sourceVideo.mkv -i sourceSubtitle.srt -c copy outputVideo.mkv -i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。-c:">
-<meta property="og:updated_time" content="2017-04-13T07:31:00.986Z">
+<meta property="og:updated_time" content="2018-08-15T07:07:05.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用ffmpeg指令影片轉檔與合併字幕">
 <meta name="twitter:description" content="mkv格式, 屬於matroska系列支援單一檔案包含視訊與字幕功能透過ffmpeg指令將字幕封裝到影片檔(mkv格式)  測試版本: ffmpeg 2.7.1 ubuntu 12.041$ ffmpeg -i sourceVideo.mkv -i sourceSubtitle.srt -c copy outputVideo.mkv -i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。-c:">
@@ -294,6 +294,8 @@
 <p>-vf “subtitles=sourceSubtitle.srt” 可將字幕直接寫入影片中，此時就無法在使用-c:v copy, 因為video的部份需要重新運算將字幕寫入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ffmpeg -i <span class="built_in">source</span>Video.mp4 -vf <span class="string">"subtitles=sourceSubtitle.srt"</span> outputVideo.mp4</div></pre></td></tr></table></figure></p>
 <p>-vf “subtitles=sourceSubtitle.srt:force_style=’Fontsize=24’” 如果覺得預設的字型太小，也可以透過額外的設定指定字幕大小<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ffmpeg -i <span class="built_in">source</span>Video.mp4 -vf <span class="string">"subtitles=sourceSubtitle.srt:force_style='Fontsize=24'"</span> outputVideo.mp4</div></pre></td></tr></table></figure></p>
 </blockquote>
+<h2 id="批次轉換多個檔案"><a href="#批次轉換多個檔案" class="headerlink" title="批次轉換多個檔案"></a>批次轉換多個檔案</h2><p>想要一次轉換多個檔案的話，可以透過command的for指令達成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ for a in *.mp4; do ffmpeg -i &quot;$a&quot; &quot;$&#123;a%.mp4&#125;.mpeg&quot;</div></pre></td></tr></table></figure></p>
+<p>利用for指令，取出符合*.mp4的檔案名稱<br>接著利用do 執行後方的指令，也就是ffmpeg -i input-file-name output-file-name<br>input-file-name的位置擺放$a，表示for找到的檔案名稱都是input<br>output-file-name的位置擺放${a%.mp4}.mpeg<br>表示新的格式是.mpeg，這邊是固定的<br>而${a%.mp4}將原本的檔名符合結尾包含.mp4的取代為不包含.mp4的單純檔案名稱<br>這樣最後輸出的檔名才會是filename.mpeg<br>也可以利用以下的for+echo指令，預覽即將執行的指令為何<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ for a in *.mp4; do echo &quot;ffmpeg -i \&quot;$a\&quot; \&quot;$&#123;a%.mp4&#125;.mpeg\&quot;&quot;; done</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -428,7 +430,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#批次轉換多個檔案"><span class="nav-number">1.</span> <span class="nav-text">批次轉換多個檔案</span></a></li></ol></div>
             
           </div>
         </section>
