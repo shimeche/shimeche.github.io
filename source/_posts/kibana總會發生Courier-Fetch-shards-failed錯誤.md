@@ -2,6 +2,11 @@
 title: 'kibana發生Courier Fetch: n of m shards failed警告'
 date: 2019-06-19 11:54:14
 tags:
+- kibana
+- elasticsearch
+- docker
+- docker-compose
+- elk
 ---
 
 {% asset_img shards-failed-01.png %}
