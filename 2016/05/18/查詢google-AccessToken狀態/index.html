@@ -6,19 +6,19 @@
 
 
 <html class="theme-next muse use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
-  <meta name="google-site-verification" content="aSakz9uFmiU6xKNqPZAUZAd5ehWoBnZLeOcKi9ID4v4" />
+  <meta name="google-site-verification" content="aSakz9uFmiU6xKNqPZAUZAd5ehWoBnZLeOcKi9ID4v4">
 
 
 
@@ -31,7 +31,7 @@
 
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -65,21 +65,21 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
@@ -87,12 +87,12 @@
 
 
 <meta name="description" content="使用google API取得的Access Token，可以透過以下網址直接查詢對應的Info https://www.googleapis.com/oauth2/v1/tokeninfo?access_token= 正確的話會顯示12345678&amp;#123;  issued_to: &amp;quot;99999999999.apps.googleusercontent.com&amp;quot;,  audi">
-<meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="查詢google AccessToken狀態">
 <meta property="og:url" content="http://shimeche.github.io/2016/05/18/查詢google-AccessToken狀態/index.html">
 <meta property="og:site_name" content="阿轉的blog">
 <meta property="og:description" content="使用google API取得的Access Token，可以透過以下網址直接查詢對應的Info https://www.googleapis.com/oauth2/v1/tokeninfo?access_token= 正確的話會顯示12345678&amp;#123;  issued_to: &amp;quot;99999999999.apps.googleusercontent.com&amp;quot;,  audi">
+<meta property="og:locale" content="zh-tw">
 <meta property="og:updated_time" content="2017-04-13T07:31:00.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="查詢google AccessToken狀態">
@@ -152,7 +152,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">阿轉的blog</span>
       <span class="logo-line-after"><i></i></span>
@@ -179,7 +179,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首頁
           </a>
@@ -189,7 +189,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             歸檔
           </a>
@@ -199,7 +199,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             標籤
           </a>
@@ -284,15 +284,15 @@
 
       
         <p>使用google API取得的Access Token，可以透過以下網址直接查詢對應的Info</p>
-<p><a href="https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=" target="_blank" rel="external">https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=</a></p>
-<h3 id="正確的話會顯示"><a href="#正確的話會顯示" class="headerlink" title="正確的話會顯示"></a>正確的話會顯示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  issued_to: &quot;99999999999.apps.googleusercontent.com&quot;,</div><div class="line">  audience: &quot;&quot;99999999999.apps.googleusercontent.com&quot;,</div><div class="line">  user_id: &quot;11106999999999999999999999&quot;,</div><div class="line">  scope: &quot;https://www.googleapis.com/auth/plus.me&quot;,</div><div class="line">  expires_in: 3504,</div><div class="line">  access_type: &quot;offline&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=" target="_blank" rel="noopener">https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=</a></p>
+<h3 id="正確的話會顯示"><a href="#正確的話會顯示" class="headerlink" title="正確的話會顯示"></a>正確的話會顯示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  issued_to: &quot;99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  audience: &quot;&quot;99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  user_id: &quot;11106999999999999999999999&quot;,</span><br><span class="line">  scope: &quot;https://www.googleapis.com/auth/plus.me&quot;,</span><br><span class="line">  expires_in: 3504,</span><br><span class="line">  access_type: &quot;offline&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其中，expires_in是剩餘幾秒就會過期<br><a id="more"></a></p>
-<h3 id="失敗的話則會顯示"><a href="#失敗的話則會顯示" class="headerlink" title="失敗的話則會顯示"></a>失敗的話則會顯示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  error: &quot;invalid_token&quot;,</div><div class="line">  error_description: &quot;Invalid Value&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="失敗的話則會顯示"><a href="#失敗的話則會顯示" class="headerlink" title="失敗的話則會顯示"></a>失敗的話則會顯示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  error: &quot;invalid_token&quot;,</span><br><span class="line">  error_description: &quot;Invalid Value&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>也可以查詢id token的info</p>
-<p><a href="https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=" target="_blank" rel="external">https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=</a></p>
-<p>預期回傳如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  iss: &quot;accounts.google.com&quot;,</div><div class="line">  at_hash: &quot;qqqqqqqqqqqqqqqqqqqqqqqqqqq&quot;,</div><div class="line">  aud: &quot;99999999999-99999999999.apps.googleusercontent.com&quot;,</div><div class="line">  sub: &quot;99999999999&quot;,</div><div class="line">  email_verified: &quot;true&quot;,</div><div class="line">  azp: &quot;99999999999-99999999999.apps.googleusercontent.com&quot;,</div><div class="line">  email: &quot;test@gmail.com&quot;,</div><div class="line">  iat: &quot;1463550722&quot;,</div><div class="line">  exp: &quot;1463554322&quot;,</div><div class="line">  alg: &quot;RS256&quot;,</div><div class="line">  kid: &quot;99999999999&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a href="https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=" target="_blank" rel="noopener">https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=</a></p>
+<p>預期回傳如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  iss: &quot;accounts.google.com&quot;,</span><br><span class="line">  at_hash: &quot;qqqqqqqqqqqqqqqqqqqqqqqqqqq&quot;,</span><br><span class="line">  aud: &quot;99999999999-99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  sub: &quot;99999999999&quot;,</span><br><span class="line">  email_verified: &quot;true&quot;,</span><br><span class="line">  azp: &quot;99999999999-99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  email: &quot;test@gmail.com&quot;,</span><br><span class="line">  iat: &quot;1463550722&quot;,</span><br><span class="line">  exp: &quot;1463554322&quot;,</span><br><span class="line">  alg: &quot;RS256&quot;,</span><br><span class="line">  kid: &quot;99999999999&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>其中，sub其實就是google’s userId</p>
-<p>如何透過線上工具直接取得access token呢？<br>可以使用<a href="https://developers.google.com/oauthplayground/" target="_blank" rel="external">oauthplayground</a></p>
+<p>如何透過線上工具直接取得access token呢？<br>可以使用<a href="https://developers.google.com/oauthplayground/" target="_blank" rel="noopener">oauthplayground</a></p>
 
       
     </div>
@@ -317,16 +317,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/26/Mongodb啟用問題/" rel="next" title="Mongodb啟用問題">
-                <i class="fa fa-chevron-left"></i> Mongodb啟用問題
+              <a href="/2016/05/17/超商咖啡價格分析/" rel="next" title="超商咖啡價格分析">
+                <i class="fa fa-chevron-left"></i> 超商咖啡價格分析
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/17/超商咖啡價格分析/" rel="prev" title="超商咖啡價格分析">
-                超商咖啡價格分析 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/26/Mongodb啟用問題/" rel="prev" title="Mongodb啟用問題">
+                Mongodb啟用問題 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -375,7 +375,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目錄
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -386,16 +386,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Shime Hsu" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Shime Hsu">
           <p class="site-author-name" itemprop="name">Shime Hsu</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -443,10 +441,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

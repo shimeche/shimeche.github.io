@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="WGet1$ wget -O- [url] 將wget取得的內容，直接轉往STUDSTO(pipe方式) 1$ .... | args wget -O a.zip 透過pipe取得wget的目標url, args可以將參數傳遞給wget">
+<meta name="description" content="本篇包含 docker-compose的用法 安裝docker安裝docker-composebuild image(編譯)指定image的tag將images推到registry1$ docker push your.registry.com/image_name:image_version 如果是推送到私有的registry，可能會出現以下問題">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用bash指令">
-<meta property="og:url" content="http://shimeche.github.io/2016/05/13/常用bash指令/index.html">
+<meta property="og:title" content="Docker使用筆記">
+<meta property="og:url" content="http://shimeche.github.io/2019/06/17/Docker使用筆記/index.html">
 <meta property="og:site_name" content="阿轉的blog">
-<meta property="og:description" content="WGet1$ wget -O- [url] 將wget取得的內容，直接轉往STUDSTO(pipe方式) 1$ .... | args wget -O a.zip 透過pipe取得wget的目標url, args可以將參數傳遞給wget">
+<meta property="og:description" content="本篇包含 docker-compose的用法 安裝docker安裝docker-composebuild image(編譯)指定image的tag將images推到registry1$ docker push your.registry.com/image_name:image_version 如果是推送到私有的registry，可能會出現以下問題">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2017-04-13T07:31:01.094Z">
+<meta property="og:updated_time" content="2019-06-18T06:19:10.616Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用bash指令">
-<meta name="twitter:description" content="WGet1$ wget -O- [url] 將wget取得的內容，直接轉往STUDSTO(pipe方式) 1$ .... | args wget -O a.zip 透過pipe取得wget的目標url, args可以將參數傳遞給wget">
+<meta name="twitter:title" content="Docker使用筆記">
+<meta name="twitter:description" content="本篇包含 docker-compose的用法 安裝docker安裝docker-composebuild image(編譯)指定image的tag將images推到registry1$ docker push your.registry.com/image_name:image_version 如果是推送到私有的registry，可能會出現以下問題">
 
 
 
@@ -114,7 +114,7 @@
   };
 </script>
 
-  <title> 常用bash指令 | 阿轉的blog </title>
+  <title> Docker使用筆記 | 阿轉的blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -243,7 +243,7 @@
             
             
               
-                常用bash指令
+                Docker使用筆記
               
             
           </h1>
@@ -255,8 +255,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-13T14:04:43+08:00" content="2016-05-13">
-              2016-05-13
+            <time itemprop="dateCreated" datetime="2019-06-17T16:33:17+08:00" content="2019-06-17">
+              2019-06-17
             </time>
           </span>
 
@@ -283,15 +283,10 @@
       
 
       
-        <h3 id="WGet"><a href="#WGet" class="headerlink" title="WGet"></a>WGet</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -O- [url]</span><br></pre></td></tr></table></figure>
-<p>將wget取得的內容，直接轉往STUDSTO(pipe方式)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ .... | args wget -O a.zip</span><br></pre></td></tr></table></figure>
-<p>透過pipe取得wget的目標url, args可以將參數傳遞給wget<br><a id="more"></a></p>
-<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep -o</span><br></pre></td></tr></table></figure>
-<p>只顯示match的部份</p>
-<h3 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cut <span class="_">-d</span> \<span class="string">" -f 9</span></span><br></pre></td></tr></table></figure>
-<p>-d 利用”符號分割字串為陣列，其中\是跳脫字元<br>-f 取得第九個元素，元素起始值為1</p>
-<h3 id="檢查-IP-與主機名稱對應"><a href="#檢查-IP-與主機名稱對應" class="headerlink" title="檢查 IP 與主機名稱對應"></a>檢查 IP 與主機名稱對應</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nslookup</span><br></pre></td></tr></table></figure>
+        <p>本篇包含 docker-compose的用法</p>
+<h3 id="安裝docker"><a href="#安裝docker" class="headerlink" title="安裝docker"></a>安裝docker</h3><h3 id="安裝docker-compose"><a href="#安裝docker-compose" class="headerlink" title="安裝docker-compose"></a>安裝docker-compose</h3><h3 id="build-image-編譯"><a href="#build-image-編譯" class="headerlink" title="build image(編譯)"></a>build image(編譯)</h3><h3 id="指定image的tag"><a href="#指定image的tag" class="headerlink" title="指定image的tag"></a>指定image的tag</h3><h3 id="將images推到registry"><a href="#將images推到registry" class="headerlink" title="將images推到registry"></a>將images推到registry</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker push your.registry.com/image_name:image_version</span><br></pre></td></tr></table></figure>
+<p>如果是推送到私有的registry，可能會出現以下問題</p>
+
       
     </div>
 
@@ -315,16 +310,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/12/Hexo使用筆記/" rel="next" title="Hexo使用筆記">
-                <i class="fa fa-chevron-left"></i> Hexo使用筆記
+              <a href="/2017/09/20/Logstash使用筆記/" rel="next" title="Logstash使用筆記">
+                <i class="fa fa-chevron-left"></i> Logstash使用筆記
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/16/AngularJS學習筆記/" rel="prev" title="AngularJS學習筆記">
-                AngularJS學習筆記 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/19/kibana總會發生Courier-Fetch-shards-failed錯誤/" rel="prev" title="kibana發生Courier Fetch: n of m shards failed警告">
+                kibana發生Courier Fetch: n of m shards failed警告 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -423,7 +418,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#WGet"><span class="nav-number">1.</span> <span class="nav-text">WGet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep"><span class="nav-number">2.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut"><span class="nav-number">3.</span> <span class="nav-text">cut</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#檢查-IP-與主機名稱對應"><span class="nav-number">4.</span> <span class="nav-text">檢查 IP 與主機名稱對應</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝docker"><span class="nav-number">1.</span> <span class="nav-text">安裝docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝docker-compose"><span class="nav-number">2.</span> <span class="nav-text">安裝docker-compose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#build-image-編譯"><span class="nav-number">3.</span> <span class="nav-text">build image(編譯)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定image的tag"><span class="nav-number">4.</span> <span class="nav-text">指定image的tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#將images推到registry"><span class="nav-number">5.</span> <span class="nav-text">將images推到registry</span></a></li></ol></div>
             
           </div>
         </section>

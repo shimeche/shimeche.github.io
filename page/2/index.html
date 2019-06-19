@@ -6,19 +6,19 @@
 
 
 <html class="theme-next muse use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
-  <meta name="google-site-verification" content="aSakz9uFmiU6xKNqPZAUZAd5ehWoBnZLeOcKi9ID4v4" />
+  <meta name="google-site-verification" content="aSakz9uFmiU6xKNqPZAUZAd5ehWoBnZLeOcKi9ID4v4">
 
 
 
@@ -31,7 +31,7 @@
 
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -65,21 +65,21 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
@@ -90,6 +90,7 @@
 <meta property="og:title" content="阿轉的blog">
 <meta property="og:url" content="http://shimeche.github.io/page/2/index.html">
 <meta property="og:site_name" content="阿轉的blog">
+<meta property="og:locale" content="zh-tw">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿轉的blog">
 
@@ -149,7 +150,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">阿轉的blog</span>
       <span class="logo-line-after"><i></i></span>
@@ -176,7 +177,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首頁
           </a>
@@ -186,7 +187,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             歸檔
           </a>
@@ -196,7 +197,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             標籤
           </a>
@@ -219,6 +220,209 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/14/利用ffmpeg影片轉檔與合併字幕/" itemprop="url">
+                  利用ffmpeg指令影片轉檔與合併字幕
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-10-14T13:59:17+08:00" content="2016-10-14">
+              2016-10-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><a href="https://zh.wikipedia.org/wiki/Matroska" target="_blank" rel="noopener">mkv格式, 屬於matroska系列</a>支援單一檔案包含視訊與字幕功能<br>透過ffmpeg指令將字幕封裝到影片檔(mkv格式)</p>
+<blockquote>
+<p>測試版本: <a href="https://www.johnvansickle.com/ffmpeg/" target="_blank" rel="noopener">ffmpeg 2.7.1</a> ubuntu 12.04<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -i <span class="built_in">source</span>Video.mkv -i <span class="built_in">source</span>Subtitle.srt -c copy outputVideo.mkv</span><br></pre></td></tr></table></figure></p>
+<p>-i: 輸入來源，可以多個輸入。同時支援輸入多個字幕檔。<br>-c: codec縮寫, 輸出的編碼格式codec採用複製模式copy, 輸出的影像格式與輸入相同。<br>也可以使用-c:a copy 或 -c:v copy 表示針對audio 或 video作copy就好<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -i <span class="built_in">source</span>Video.mkv -i <span class="built_in">source</span>Subtitle.srt -c:a copy -c:v copy outputVideo.mkv</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>因為不作視訊或音訊的轉換，也就不需花太久時間, 測試影片約為90min，實際合併字幕約花了35秒<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/14/利用ffmpeg影片轉檔與合併字幕/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </p></div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/23/Facebook-Graph-API操作/" itemprop="url">
+                  Facebook Graph API操作
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-06-23T10:41:25+08:00" content="2016-06-23">
+              2016-06-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="取得無期限token方法"><a href="#取得無期限token方法" class="headerlink" title="取得無期限token方法"></a>取得無期限token方法</h3><blockquote>
+<p><a href="https://developers.facebook.com/tools/explorer" target="_blank" rel="noopener">https://developers.facebook.com/tools/explorer</a></p>
+</blockquote>
+<p>選擇想要授權的應用程式</p>
+<p>選擇Get User Access Token</p>
+<p>至少勾選pages_show_list權限，其他在視需求勾選，Ex: email…</p>
+<p>授權畫面確定後，存取權仗就會出現新的access token<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/23/Facebook-Graph-API操作/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </p></div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -284,11 +488,11 @@
 
       
         
-          <p>有時候不正常關機或不明原因導致mongoDB停止<br>接著重新啟用mongoDB時，就叫不醒了<br>但執行啟用mongoDB指令時，也沒有出現特別的錯誤，還跟你說啟用了!!?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo start mongod</div></pre></td></tr></table></figure></p>
+          <p>有時候不正常關機或不明原因導致mongoDB停止<br>接著重新啟用mongoDB時，就叫不醒了<br>但執行啟用mongoDB指令時，也沒有出現特別的錯誤，還跟你說啟用了!!?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo start mongod</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>mongod start/running, process 1660<br>看起來是啟用了阿~~~</p>
 </blockquote>
-<p>但察看網路服務狀況，仍然沒有出現mongoDB開啟的port<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ netstat -tpnl</div><div class="line">預設應該要有27017的port</div></pre></td></tr></table></figure></p>
+<p>但察看網路服務狀況，仍然沒有出現mongoDB開啟的port<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -tpnl</span><br><span class="line">預設應該要有27017的port</span><br></pre></td></tr></table></figure></p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/26/Mongodb啟用問題/#more" rel="contents">
               閱讀全文 &raquo;
@@ -385,8 +589,8 @@
       
         
           <p>使用google API取得的Access Token，可以透過以下網址直接查詢對應的Info</p>
-<p><a href="https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=">https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=</a></p>
-<h3 id="正確的話會顯示"><a href="#正確的話會顯示" class="headerlink" title="正確的話會顯示"></a>正確的話會顯示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  issued_to: &quot;99999999999.apps.googleusercontent.com&quot;,</div><div class="line">  audience: &quot;&quot;99999999999.apps.googleusercontent.com&quot;,</div><div class="line">  user_id: &quot;11106999999999999999999999&quot;,</div><div class="line">  scope: &quot;https://www.googleapis.com/auth/plus.me&quot;,</div><div class="line">  expires_in: 3504,</div><div class="line">  access_type: &quot;offline&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=" target="_blank" rel="noopener">https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=</a></p>
+<h3 id="正確的話會顯示"><a href="#正確的話會顯示" class="headerlink" title="正確的話會顯示"></a>正確的話會顯示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  issued_to: &quot;99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  audience: &quot;&quot;99999999999.apps.googleusercontent.com&quot;,</span><br><span class="line">  user_id: &quot;11106999999999999999999999&quot;,</span><br><span class="line">  scope: &quot;https://www.googleapis.com/auth/plus.me&quot;,</span><br><span class="line">  expires_in: 3504,</span><br><span class="line">  access_type: &quot;offline&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其中，expires_in是剩餘幾秒就會過期<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/18/查詢google-AccessToken狀態/#more" rel="contents">
@@ -395,7 +599,7 @@
           </div>
         
       
-    </div>
+    </p></div>
 
     <div>
       
@@ -483,7 +687,7 @@
 
       
         
-          <h2 id="全家咖啡"><a href="#全家咖啡" class="headerlink" title="全家咖啡"></a>全家咖啡</h2><h4 id="UUPON活動-2016-6-7"><a href="#UUPON活動-2016-6-7" class="headerlink" title="UUPON活動(~2016/6/7)"></a>UUPON活動(~2016/6/7)</h4><p><a href="https://uupon.tw/activity/detail.do?id=20160412201247410383">會員專屬！兌換全家中熱拿鐵只要88點！</a></p>
+          <h2 id="全家咖啡"><a href="#全家咖啡" class="headerlink" title="全家咖啡"></a>全家咖啡</h2><h4 id="UUPON活動-2016-6-7"><a href="#UUPON活動-2016-6-7" class="headerlink" title="UUPON活動(~2016/6/7)"></a>UUPON活動(~2016/6/7)</h4><p><a href="https://uupon.tw/activity/detail.do?id=20160412201247410383" target="_blank" rel="noopener">會員專屬！兌換全家中熱拿鐵只要88點！</a></p>
 <blockquote>
 <p>88點活動：45/88=0.51元/點</p>
 </blockquote>
@@ -497,7 +701,7 @@
           </div>
         
       
-    </div>
+    </p></blockquote></div>
 
     <div>
       
@@ -593,7 +797,7 @@
           </div>
         
       
-    </div>
+    </p></div>
 
     <div>
       
@@ -681,9 +885,9 @@
 
       
         
-          <h3 id="WGet"><a href="#WGet" class="headerlink" title="WGet"></a>WGet</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget -O- [url]</div></pre></td></tr></table></figure>
+          <h3 id="WGet"><a href="#WGet" class="headerlink" title="WGet"></a>WGet</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -O- [url]</span><br></pre></td></tr></table></figure>
 <p>將wget取得的內容，直接轉往STUDSTO(pipe方式)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ .... | args wget -O a.zip</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ .... | args wget -O a.zip</span><br></pre></td></tr></table></figure>
 <p>透過pipe取得wget的目標url, args可以將參數傳遞給wget<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/13/常用bash指令/#more" rel="contents">
@@ -692,7 +896,7 @@
           </div>
         
       
-    </div>
+    </p></div>
 
     <div>
       
@@ -780,9 +984,9 @@
 
       
         
-          <h3 id="發表文章"><a href="#發表文章" class="headerlink" title="發表文章"></a>發表文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo n [<span class="built_in">type</span>] [title]</div><div class="line">or</div><div class="line">$ hexo new [<span class="built_in">type</span>] [title]</div></pre></td></tr></table></figure>
+          <h3 id="發表文章"><a href="#發表文章" class="headerlink" title="發表文章"></a>發表文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n [<span class="built_in">type</span>] [title]</span><br><span class="line">or</span><br><span class="line">$ hexo new [<span class="built_in">type</span>] [title]</span><br></pre></td></tr></table></figure>
 <p>[type]可以是post, page or draft, 預設是post</p>
-<h3 id="發表文章-Example"><a href="#發表文章-Example" class="headerlink" title="發表文章 Example"></a>發表文章 Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo n 這是一篇文章</div><div class="line">or</div><div class="line">$ hexo new 這是一篇文章</div></pre></td></tr></table></figure>
+<h3 id="發表文章-Example"><a href="#發表文章-Example" class="headerlink" title="發表文章 Example"></a>發表文章 Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n 這是一篇文章</span><br><span class="line">or</span><br><span class="line">$ hexo new 這是一篇文章</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/12/Hexo使用筆記/#more" rel="contents">
               閱讀全文 &raquo;
@@ -850,16 +1054,14 @@
 
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Shime Hsu" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Shime Hsu">
           <p class="site-author-name" itemprop="name">Shime Hsu</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -896,10 +1098,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

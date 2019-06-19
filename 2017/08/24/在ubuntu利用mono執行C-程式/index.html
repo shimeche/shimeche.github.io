@@ -6,19 +6,19 @@
 
 
 <html class="theme-next muse use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
-  <meta name="google-site-verification" content="aSakz9uFmiU6xKNqPZAUZAd5ehWoBnZLeOcKi9ID4v4" />
+  <meta name="google-site-verification" content="aSakz9uFmiU6xKNqPZAUZAd5ehWoBnZLeOcKi9ID4v4">
 
 
 
@@ -31,7 +31,7 @@
 
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -65,21 +65,21 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
@@ -87,12 +87,12 @@
 
 
 <meta name="description" content="不需要微軟的環境就可以編譯與執行C#，真的蠻方便的mac(osx)也可以，但還沒實際試過mono在ubuntu安裝步驟挺簡單的，可以參考底下的Ref.">
-<meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在ubuntu利用mono執行C#程式">
 <meta property="og:url" content="http://shimeche.github.io/2017/08/24/在ubuntu利用mono執行C-程式/index.html">
 <meta property="og:site_name" content="阿轉的blog">
 <meta property="og:description" content="不需要微軟的環境就可以編譯與執行C#，真的蠻方便的mac(osx)也可以，但還沒實際試過mono在ubuntu安裝步驟挺簡單的，可以參考底下的Ref.">
+<meta property="og:locale" content="zh-tw">
 <meta property="og:updated_time" content="2017-08-24T08:57:06.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在ubuntu利用mono執行C#程式">
@@ -152,7 +152,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">阿轉的blog</span>
       <span class="logo-line-after"><i></i></span>
@@ -179,7 +179,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首頁
           </a>
@@ -189,7 +189,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             歸檔
           </a>
@@ -199,7 +199,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             標籤
           </a>
@@ -284,18 +284,18 @@
 
       
         <p>不需要微軟的環境就可以編譯與執行C#，真的蠻方便的<br>mac(osx)也可以，但還沒實際試過<br>mono在ubuntu安裝步驟挺簡單的，可以參考底下的Ref.<br><a id="more"></a></p>
-<h2 id="常用的指令"><a href="#常用的指令" class="headerlink" title="常用的指令"></a>常用的指令</h2><h3 id="msbuild"><a href="#msbuild" class="headerlink" title="msbuild"></a>msbuild</h3><p>原本叫做xbuild，現在已經被廢除改用msbuild<br>可以直接進入C#專案目錄，執行msbuild即可開始編譯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ msbuild</div></pre></td></tr></table></figure></p>
-<p>也可以指定目錄作編譯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ msbuild ./src/</div></pre></td></tr></table></figure></p>
-<h3 id="mcs"><a href="#mcs" class="headerlink" title="mcs"></a>mcs</h3><p>就是個Complier，自己寫個簡單的.cs就可以在ubuntu環境下編譯為exe檔<br>透過-r可以在編譯時加入需要的參照<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mcs path/file.cs -out:file.exe -r:Newtonsoft.Json.dll -r:bin/any.dll</div></pre></td></tr></table></figure></p>
-<h3 id="mono"><a href="#mono" class="headerlink" title="mono"></a>mono</h3><p>執行exe檔的指令，很簡單的執行方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mono file.exe</div></pre></td></tr></table></figure></p>
-<p>預設執行時，會去尋找編譯時所參照的dll<br>優先會去找跟exe檔同目錄的dll，沒有的話就會去找/usr/lib/底下，都沒有的話基本上就會報錯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Unhandled Exception:</div><div class="line">System.IO.FileNotFoundException: Could not load file or assembly &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos; or one of its dependencies.</div><div class="line">File name: &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos;</div><div class="line">[ERROR] FATAL UNHANDLED EXCEPTION: System.IO.FileNotFoundException: Could not load file or assembly &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos; or one of its dependencies.</div><div class="line">File name: &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos;</div></pre></td></tr></table></figure></p>
-<p>所以如果參照的dll跟exe並不在一起，就要透過環境變數path的方式來執行，例如參照DLL放在bin目錄下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ MONO_PATH=bin mono file.exe</div></pre></td></tr></table></figure></p>
+<h2 id="常用的指令"><a href="#常用的指令" class="headerlink" title="常用的指令"></a>常用的指令</h2><h3 id="msbuild"><a href="#msbuild" class="headerlink" title="msbuild"></a>msbuild</h3><p>原本叫做xbuild，現在已經被廢除改用msbuild<br>可以直接進入C#專案目錄，執行msbuild即可開始編譯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ msbuild</span><br></pre></td></tr></table></figure></p>
+<p>也可以指定目錄作編譯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ msbuild ./src/</span><br></pre></td></tr></table></figure></p>
+<h3 id="mcs"><a href="#mcs" class="headerlink" title="mcs"></a>mcs</h3><p>就是個Complier，自己寫個簡單的.cs就可以在ubuntu環境下編譯為exe檔<br>透過-r可以在編譯時加入需要的參照<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mcs path/file.cs -out:file.exe -r:Newtonsoft.Json.dll -r:bin/any.dll</span><br></pre></td></tr></table></figure></p>
+<h3 id="mono"><a href="#mono" class="headerlink" title="mono"></a>mono</h3><p>執行exe檔的指令，很簡單的執行方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mono file.exe</span><br></pre></td></tr></table></figure></p>
+<p>預設執行時，會去尋找編譯時所參照的dll<br>優先會去找跟exe檔同目錄的dll，沒有的話就會去找/usr/lib/底下，都沒有的話基本上就會報錯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Unhandled Exception:</span><br><span class="line">System.IO.FileNotFoundException: Could not load file or assembly &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos; or one of its dependencies.</span><br><span class="line">File name: &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos;</span><br><span class="line">[ERROR] FATAL UNHANDLED EXCEPTION: System.IO.FileNotFoundException: Could not load file or assembly &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos; or one of its dependencies.</span><br><span class="line">File name: &apos;any, Version=0.7.0.0, Culture=neutral, PublicKeyToken=null&apos;</span><br></pre></td></tr></table></figure></p>
+<p>所以如果參照的dll跟exe並不在一起，就要透過環境變數path的方式來執行，例如參照DLL放在bin目錄下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ MONO_PATH=bin mono file.exe</span><br></pre></td></tr></table></figure></p>
 <p>這樣就可以解決mono執行時，找不到位於其他目錄Dll的問題</p>
-<p>另外，透過以下方式就知道實際執行時，mono的執行過程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ MONO_LOG_LEVEL=debug mono file.exe</div></pre></td></tr></table></figure></p>
+<p>另外，透過以下方式就知道實際執行時，mono的執行過程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ MONO_LOG_LEVEL=debug mono file.exe</span><br></pre></td></tr></table></figure></p>
 <h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref:"></a>Ref:</h2><ul>
-<li>Mono Office Site<br><a href="http://www.mono-project.com/" target="_blank" rel="external">http://www.mono-project.com/</a></li>
-<li>安裝mono可參考此篇文章，Compile and run C# in the Command Line (Linux, Mac &amp; Windows)<br><a href="https://www.codetuts.tech/compile-c-sharp-command-line/" target="_blank" rel="external">https://www.codetuts.tech/compile-c-sharp-command-line/</a></li>
-<li>透過環境變數加入參照執行mono<br>DllNotFoundException or TypeLoadException<br><a href="https://brendanzagaeski.appspot.com/0013.html" target="_blank" rel="external">https://brendanzagaeski.appspot.com/0013.html</a></li>
+<li>Mono Office Site<br><a href="http://www.mono-project.com/" target="_blank" rel="noopener">http://www.mono-project.com/</a></li>
+<li>安裝mono可參考此篇文章，Compile and run C# in the Command Line (Linux, Mac &amp; Windows)<br><a href="https://www.codetuts.tech/compile-c-sharp-command-line/" target="_blank" rel="noopener">https://www.codetuts.tech/compile-c-sharp-command-line/</a></li>
+<li>透過環境變數加入參照執行mono<br>DllNotFoundException or TypeLoadException<br><a href="https://brendanzagaeski.appspot.com/0013.html" target="_blank" rel="noopener">https://brendanzagaeski.appspot.com/0013.html</a></li>
 </ul>
 
       
@@ -321,16 +321,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/20/Logstash使用筆記/" rel="next" title="Logstash使用筆記">
-                <i class="fa fa-chevron-left"></i> Logstash使用筆記
+              <a href="/2017/07/26/Xdebug搭配Visual-Studio-Code使用方法與設定/" rel="next" title="Xdebug搭配Visual Studio Code使用方法與設定">
+                <i class="fa fa-chevron-left"></i> Xdebug搭配Visual Studio Code使用方法與設定
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/26/Xdebug搭配Visual-Studio-Code使用方法與設定/" rel="prev" title="Xdebug搭配Visual Studio Code使用方法與設定">
-                Xdebug搭配Visual Studio Code使用方法與設定 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/20/Logstash使用筆記/" rel="prev" title="Logstash使用筆記">
+                Logstash使用筆記 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -379,7 +379,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目錄
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -390,16 +390,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Shime Hsu" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Shime Hsu">
           <p class="site-author-name" itemprop="name">Shime Hsu</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -447,10 +445,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

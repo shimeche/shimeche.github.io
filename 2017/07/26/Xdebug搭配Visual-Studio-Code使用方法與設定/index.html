@@ -6,19 +6,19 @@
 
 
 <html class="theme-next muse use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
-  <meta name="google-site-verification" content="aSakz9uFmiU6xKNqPZAUZAd5ehWoBnZLeOcKi9ID4v4" />
+  <meta name="google-site-verification" content="aSakz9uFmiU6xKNqPZAUZAd5ehWoBnZLeOcKi9ID4v4">
 
 
 
@@ -31,7 +31,7 @@
 
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -65,21 +65,21 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
@@ -87,12 +87,12 @@
 
 
 <meta name="description" content="方便的在vc code透過xdebug進行php的偵錯">
-<meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xdebug搭配Visual Studio Code使用方法與設定">
 <meta property="og:url" content="http://shimeche.github.io/2017/07/26/Xdebug搭配Visual-Studio-Code使用方法與設定/index.html">
 <meta property="og:site_name" content="阿轉的blog">
 <meta property="og:description" content="方便的在vc code透過xdebug進行php的偵錯">
+<meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://shimeche.github.io/2017/07/26/Xdebug搭配Visual-Studio-Code使用方法與設定/php_info_remote.png">
 <meta property="og:updated_time" content="2018-02-02T06:35:49.068Z">
 <meta name="twitter:card" content="summary">
@@ -154,7 +154,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">阿轉的blog</span>
       <span class="logo-line-after"><i></i></span>
@@ -181,7 +181,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首頁
           </a>
@@ -191,7 +191,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             歸檔
           </a>
@@ -201,7 +201,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             標籤
           </a>
@@ -288,20 +288,20 @@
         <p>方便的在vc code透過xdebug進行php的偵錯<br><a id="more"></a></p>
 <h3 id="執行環境"><a href="#執行環境" class="headerlink" title="執行環境"></a>執行環境</h3><p>ubuntu 14.04<br>nginx or apache or cli<br>visual studio code 1.14.1<br>php 5</p>
 <p>開發端與Server端不在同一台電腦。<br>php執行環境在遠端，vscode在本地，透過xdebug.remote功能，可以達到遠端debug的需求。</p>
-<h3 id="檢查xdebug是否已安裝"><a href="#檢查xdebug是否已安裝" class="headerlink" title="檢查xdebug是否已安裝"></a>檢查xdebug是否已安裝</h3><p>cli:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php -i | grep &apos;xdebug.remote_enable&apos;</div></pre></td></tr></table></figure></p>
-<img src="/2017/07/26/Xdebug搭配Visual-Studio-Code使用方法與設定/php_info_remote.png" alt="已啟用xdebug" title="已啟用xdebug">
+<h3 id="檢查xdebug是否已安裝"><a href="#檢查xdebug是否已安裝" class="headerlink" title="檢查xdebug是否已安裝"></a>檢查xdebug是否已安裝</h3><p>cli:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php -i | grep &apos;xdebug.remote_enable&apos;</span><br></pre></td></tr></table></figure></p>
+<img src="/2017/07/26/Xdebug搭配Visual-Studio-Code使用方法與設定/php_info_remote.png" title="已啟用xdebug">
 <p>有安裝並啟用的話，就會出現上方的訊息。沒有任何訊息，則表示要安裝並啟用。</p>
-<p>web:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">phpinfo();</div></pre></td></tr></table></figure></p>
+<p>web:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">phpinfo();</span><br></pre></td></tr></table></figure></p>
 <p>將上方指令碼存成php檔，並透過web server讀取查看phpinfo</p>
-<h3 id="安裝xdebug"><a href="#安裝xdebug" class="headerlink" title="安裝xdebug"></a>安裝xdebug</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># sudo apt-get install php5-xdebug</div></pre></td></tr></table></figure>
-<h3 id="設定xdebug-ini"><a href="#設定xdebug-ini" class="headerlink" title="設定xdebug.ini"></a>設定xdebug.ini</h3><p>編輯xdebug設定檔，加上remote相關資訊<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># vim /etc/php5/mods-available/xdebug.ini</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">zend_extension = xdebug.so</div><div class="line">xdebug.remote_enable = 1</div><div class="line">xdebug.remote_autostart = 1</div><div class="line">xdebug.remote_handler = dbgp</div><div class="line">xdebug.remote_host = 172.17.0.1     ;指定vscode所在的IP</div><div class="line">xdebug.remote_connect_back = 1      ;如果為1，則會忽略remote_host</div><div class="line">xdebug.remote_port = 9000</div><div class="line"></div><div class="line">xdebug.remote_log = &quot;/var/log/xdebug.log&quot;</div></pre></td></tr></table></figure>
+<h3 id="安裝xdebug"><a href="#安裝xdebug" class="headerlink" title="安裝xdebug"></a>安裝xdebug</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sudo apt-get install php5-xdebug</span><br></pre></td></tr></table></figure>
+<h3 id="設定xdebug-ini"><a href="#設定xdebug-ini" class="headerlink" title="設定xdebug.ini"></a>設定xdebug.ini</h3><p>編輯xdebug設定檔，加上remote相關資訊<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vim /etc/php5/mods-available/xdebug.ini</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">zend_extension = xdebug.so</span><br><span class="line">xdebug.remote_enable = 1</span><br><span class="line">xdebug.remote_autostart = 1</span><br><span class="line">xdebug.remote_handler = dbgp</span><br><span class="line">xdebug.remote_host = 172.17.0.1     ;指定vscode所在的IP</span><br><span class="line">xdebug.remote_connect_back = 1      ;如果為1，則會忽略remote_host</span><br><span class="line">xdebug.remote_port = 9000</span><br><span class="line"></span><br><span class="line">xdebug.remote_log = &quot;/var/log/xdebug.log&quot;</span><br></pre></td></tr></table></figure>
 <p>其中remote_host, remote_port要填vscode所在的IP與vscode開啟的port(後面會說明)</p>
 <p>remote_connect_back 如果設定為1，預設會將debug資訊拋往client，也就是任意開發端。</p>
 <p>只要是對server請求的client都可以得到xdebug_session進行debug</p>
 <p>因此必須要小心設定。對了，這個設定值對CLI無效。</p>
 <p>記得要重新啟動服務</p>
-<h3 id="重新啟動服務"><a href="#重新啟動服務" class="headerlink" title="重新啟動服務"></a>重新啟動服務</h3><p>ubuntu_nginx+php:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service php5-fpm restart</div></pre></td></tr></table></figure></p>
+<h3 id="重新啟動服務"><a href="#重新啟動服務" class="headerlink" title="重新啟動服務"></a>重新啟動服務</h3><p>ubuntu_nginx+php:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service php5-fpm restart</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -326,16 +326,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/24/在ubuntu利用mono執行C-程式/" rel="next" title="在ubuntu利用mono執行C#程式">
-                <i class="fa fa-chevron-left"></i> 在ubuntu利用mono執行C#程式
+              <a href="/2017/04/24/npm用法/" rel="next" title="npm用法">
+                <i class="fa fa-chevron-left"></i> npm用法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/24/npm用法/" rel="prev" title="npm用法">
-                npm用法 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/24/在ubuntu利用mono執行C-程式/" rel="prev" title="在ubuntu利用mono執行C#程式">
+                在ubuntu利用mono執行C#程式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -384,7 +384,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目錄
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -395,16 +395,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Shime Hsu" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Shime Hsu">
           <p class="site-author-name" itemprop="name">Shime Hsu</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -452,10 +450,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

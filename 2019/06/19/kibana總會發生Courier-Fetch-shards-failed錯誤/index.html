@@ -86,17 +86,19 @@
 
 
 
-<meta name="description" content="WGet1$ wget -O- [url] 將wget取得的內容，直接轉往STUDSTO(pipe方式) 1$ .... | args wget -O a.zip 透過pipe取得wget的目標url, args可以將參數傳遞給wget">
+<meta name="description" content="查看Elasticsearch的logs並沒有噴錯誤或警告單純就在kibana查詢時，上頭會出現黃色警告 Courier Fetch: 5 of 25 shard failed Google一下，大部分的解法都是調整elasticsearch.yml的設定這邊是透過docker-compose啟動服務的，所以直接修改yml的內容1234567891011121314151617181920212">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用bash指令">
-<meta property="og:url" content="http://shimeche.github.io/2016/05/13/常用bash指令/index.html">
+<meta property="og:title" content="kibana發生Courier Fetch: n of m shards failed警告">
+<meta property="og:url" content="http://shimeche.github.io/2019/06/19/kibana總會發生Courier-Fetch-shards-failed錯誤/index.html">
 <meta property="og:site_name" content="阿轉的blog">
-<meta property="og:description" content="WGet1$ wget -O- [url] 將wget取得的內容，直接轉往STUDSTO(pipe方式) 1$ .... | args wget -O a.zip 透過pipe取得wget的目標url, args可以將參數傳遞給wget">
+<meta property="og:description" content="查看Elasticsearch的logs並沒有噴錯誤或警告單純就在kibana查詢時，上頭會出現黃色警告 Courier Fetch: 5 of 25 shard failed Google一下，大部分的解法都是調整elasticsearch.yml的設定這邊是透過docker-compose啟動服務的，所以直接修改yml的內容1234567891011121314151617181920212">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2017-04-13T07:31:01.094Z">
+<meta property="og:image" content="http://shimeche.github.io/2019/06/19/kibana總會發生Courier-Fetch-shards-failed錯誤/shards-failed-01.png">
+<meta property="og:updated_time" content="2019-06-19T07:30:33.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用bash指令">
-<meta name="twitter:description" content="WGet1$ wget -O- [url] 將wget取得的內容，直接轉往STUDSTO(pipe方式) 1$ .... | args wget -O a.zip 透過pipe取得wget的目標url, args可以將參數傳遞給wget">
+<meta name="twitter:title" content="kibana發生Courier Fetch: n of m shards failed警告">
+<meta name="twitter:description" content="查看Elasticsearch的logs並沒有噴錯誤或警告單純就在kibana查詢時，上頭會出現黃色警告 Courier Fetch: 5 of 25 shard failed Google一下，大部分的解法都是調整elasticsearch.yml的設定這邊是透過docker-compose啟動服務的，所以直接修改yml的內容1234567891011121314151617181920212">
+<meta name="twitter:image" content="http://shimeche.github.io/2019/06/19/kibana總會發生Courier-Fetch-shards-failed錯誤/shards-failed-01.png">
 
 
 
@@ -114,7 +116,7 @@
   };
 </script>
 
-  <title> 常用bash指令 | 阿轉的blog </title>
+  <title> kibana發生Courier Fetch: n of m shards failed警告 | 阿轉的blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -243,7 +245,7 @@
             
             
               
-                常用bash指令
+                kibana發生Courier Fetch: n of m shards failed警告
               
             
           </h1>
@@ -255,8 +257,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-13T14:04:43+08:00" content="2016-05-13">
-              2016-05-13
+            <time itemprop="dateCreated" datetime="2019-06-19T11:54:14+08:00" content="2019-06-19">
+              2019-06-19
             </time>
           </span>
 
@@ -283,15 +285,13 @@
       
 
       
-        <h3 id="WGet"><a href="#WGet" class="headerlink" title="WGet"></a>WGet</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -O- [url]</span><br></pre></td></tr></table></figure>
-<p>將wget取得的內容，直接轉往STUDSTO(pipe方式)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ .... | args wget -O a.zip</span><br></pre></td></tr></table></figure>
-<p>透過pipe取得wget的目標url, args可以將參數傳遞給wget<br><a id="more"></a></p>
-<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep -o</span><br></pre></td></tr></table></figure>
-<p>只顯示match的部份</p>
-<h3 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cut <span class="_">-d</span> \<span class="string">" -f 9</span></span><br></pre></td></tr></table></figure>
-<p>-d 利用”符號分割字串為陣列，其中\是跳脫字元<br>-f 取得第九個元素，元素起始值為1</p>
-<h3 id="檢查-IP-與主機名稱對應"><a href="#檢查-IP-與主機名稱對應" class="headerlink" title="檢查 IP 與主機名稱對應"></a>檢查 IP 與主機名稱對應</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nslookup</span><br></pre></td></tr></table></figure>
+        <img src="/2019/06/19/kibana總會發生Courier-Fetch-shards-failed錯誤/shards-failed-01.png">
+<p>查看Elasticsearch的logs並沒有噴錯誤或警告<br>單純就在kibana查詢時，上頭會出現黃色警告 Courier Fetch: 5 of 25 shard failed</p>
+<p>Google一下，大部分的解法都是調整elasticsearch.yml的設定<br>這邊是透過docker-compose啟動服務的，所以直接修改yml的內容<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'2.2'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  elasticsearch:</span></span><br><span class="line"><span class="attr">    build:</span></span><br><span class="line"><span class="attr">      context:</span> <span class="string">./elasticsearch</span></span><br><span class="line"><span class="attr">    restart:</span> <span class="string">always</span></span><br><span class="line"><span class="attr">    container_name:</span> <span class="string">elasticsearch</span></span><br><span class="line"><span class="attr">    environment:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">cluster.name=elk-cluster</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">bootstrap.memory_lock=true</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"ES_JAVA_OPTS=-Xms1536m -Xmx1536m"</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">http.cors.enabled=true</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">http.cors.allow-origin=*</span></span><br><span class="line">    <span class="comment">#   參考google解法，加上下列這段設定</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">thread_pool.search.queue_size=10000</span></span><br><span class="line"><span class="attr">    ulimits:</span></span><br><span class="line"><span class="attr">      memlock:</span></span><br><span class="line"><span class="attr">        soft:</span> <span class="bullet">-1</span></span><br><span class="line"><span class="attr">        hard:</span> <span class="bullet">-1</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="attr">      - esdata1:</span><span class="string">/usr/share/elasticsearch/data</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="number">9200</span><span class="string">:9200</span></span><br><span class="line"><span class="attr">    networks:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">esnet</span></span><br></pre></td></tr></table></figure></p>
+<p>但是！加了好像沒用，還是持續跳出這個錯誤阿…</p>
+<p>後來改用Dev Tools，將Discover的Request內容重新POST一次<br>發現，原來是某一個index有問題，導致該index的shard出錯了<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">"_shards": &#123;</span><br><span class="line">  "total": 25,</span><br><span class="line">  "successful": 20,</span><br><span class="line">  "skipped": 0,</span><br><span class="line">  // 明顯跟你說有shard失敗</span><br><span class="line">  "failed": 5,</span><br><span class="line">  "failures": [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"shard"</span>: <span class="number">0</span>,</span><br><span class="line">      // 就是下面這個index出錯了</span><br><span class="line">      "index": "index-%&#123;published_month&#125;",</span><br><span class="line">      "node": "Tj7AFdTbTvO05iVumSWvLw",</span><br><span class="line">      "reason": &#123;</span><br><span class="line">        "type": "illegal_argument_exception",</span><br><span class="line">        "reason": "Fielddata is disabled on text fields by default. Set fielddata=true on [published] in order to load fielddata in memory by uninverting the inverted index. Note that this can however use significant memory. Alternatively use a keyword field instead."</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>透過下列語法將這個有問題的index砍掉後，就沒問題了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE index-%25&#123;published_month&#125;/</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -315,17 +315,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/12/Hexo使用筆記/" rel="next" title="Hexo使用筆記">
-                <i class="fa fa-chevron-left"></i> Hexo使用筆記
+              <a href="/2019/06/17/Docker使用筆記/" rel="next" title="Docker使用筆記">
+                <i class="fa fa-chevron-left"></i> Docker使用筆記
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/16/AngularJS學習筆記/" rel="prev" title="AngularJS學習筆記">
-                AngularJS學習筆記 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -423,7 +419,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#WGet"><span class="nav-number">1.</span> <span class="nav-text">WGet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep"><span class="nav-number">2.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut"><span class="nav-number">3.</span> <span class="nav-text">cut</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#檢查-IP-與主機名稱對應"><span class="nav-number">4.</span> <span class="nav-text">檢查 IP 與主機名稱對應</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
         </section>
